@@ -1,33 +1,25 @@
-# Ucamp-Projects
+# UCAMP Projects
 
-Repositorio donde subiré proyectos y tareas realizadas durante mi bootcamp.
+Repositorio donde almaceno los proyectos, retos y ejercicios desarrollados durante mi formación en programación y desarrollo de software en UCAMP.
 
-## Proyecto actual
-### Calculadora de IMC en Python
+## Contenido
 
-Este programa solicita datos del usuario como:
-- nombre
-- apellidos
-- edad
-- peso
-- estatura
+### Proyectos
 
-Posteriormente calcula el Índice de Masa Corporal (IMC) y muestra una clasificación según el resultado.
+Trabajos integradores y proyectos desarrollados como parte de mi formación académica.
 
-## ¿Cómo hice el programa?
+### Retos
 
-Primero solicité los datos del usuario utilizando `input()`.
+Ejercicios semanales enfocados en reforzar conceptos de programación, lógica y resolución de problemas utilizando Python.
 
-Después agregué validaciones con ciclos `while` y `try/except` para evitar errores al ingresar datos incorrectos.
+## Tecnologías utilizadas
 
-Finalmente calculé el IMC utilizando la fórmula:
+* Python
+* Git
+* GitHub
+* Visual Studio Code
+* Linux
 
-IMC = peso / estatura²
+## Objetivo
 
-y mostré una clasificación dependiendo del resultado obtenido.
-
-## Reflexión sobre el bootcamp
-
-Hasta ahora el bootcamp me ha ayudado a comprender mejor la lógica de programación y cómo resolver problemas paso a paso.
-
-También aprendí a utilizar Python, validaciones, condicionales y GitHub para subir proyectos y crear repositorios.
+Documentar mi progreso, fortalecer mis habilidades de programación y mantener un portafolio de proyectos y ejercicios realizados durante mi aprendizaje.
