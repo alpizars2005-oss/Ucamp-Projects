@@ -1,25 +1,34 @@
 # UCAMP Projects
 
-Repositorio donde almaceno los proyectos, retos y ejercicios desarrollados durante mi formación en programación y desarrollo de software en UCAMP.
+This repository contains projects, challenges, and exercises completed during my programming training at UCAMP.
 
-## Contenido
+I use it to document my progress, practice new concepts, and keep a record of the work I create while learning.
 
-### Proyectos
+## Contents
 
-Trabajos integradores y proyectos desarrollados como parte de mi formación académica.
+### Projects
 
-### Retos
+Practical assignments and larger projects completed during my training.
 
-Ejercicios semanales enfocados en reforzar conceptos de programación, lógica y resolución de problemas utilizando Python.
+### Challenges
 
-## Tecnologías utilizadas
+Exercises focused on programming logic, problem solving, and Python fundamentals.
 
-* Python
-* Git
-* GitHub
-* Visual Studio Code
-* Linux
+## Technologies Used
 
-## Objetivo
+- Python
+- Git
+- GitHub
+- Visual Studio Code
+- Linux
 
-Documentar mi progreso, fortalecer mis habilidades de programación y mantener un portafolio de proyectos y ejercicios realizados durante mi aprendizaje.
+## Goals
+
+- Strengthen my programming skills
+- Practice problem solving
+- Improve project organization and documentation
+- Build a portfolio that shows my progress over time
+
+## Current Focus
+
+I am currently improving my Python, Git, Linux, and software development fundamentals.
