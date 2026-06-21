@@ -12,11 +12,16 @@ Carpeta con mis primeros proyectos prácticos del bootcamp.
 
 Incluye:
 
-* **Calculadora de IMC:** mi primer proyecto en Python.
-* **Validación y operaciones de datos:** proyecto del Módulo 2, donde se resuelven dos ejercicios:
+- **Calculadora de IMC:** mi primer proyecto en Python.
+- **Validación y operaciones de datos:** proyecto del Módulo 2, donde se resuelven dos ejercicios:
+  - Validar la longitud de una palabra.
+  - Identificar el cuadrante de un punto en el plano cartesiano.
 
-  * Validar la longitud de una palabra.
-  * Identificar el cuadrante de un punto en el plano cartesiano.
+Archivo principal del proyecto Módulo 2:
+
+```text
+Proyecto_Ucamp/Angel_Alfredo_Alpizar_Sanchez_proyectoM2.py
+```
 
 ### Retos Módulo 2
 
@@ -24,27 +29,27 @@ Carpeta con los trabajos semanales del Módulo 2.
 
 Incluye:
 
-* **Semana 5:** ejercicio con operaciones y entrada de datos.
-* **Semana 6:** validación de contraseña.
-* **Semana 7:** práctica de estructuras de control.
-* **Semana 8:** diccionario de colores del arcoíris en diferentes idiomas.
+- **Semana 5:** ejercicio con operaciones y entrada de datos.
+- **Semana 6:** validación de contraseña.
+- **Semana 7:** práctica de estructuras de control.
+- **Semana 8:** diccionario de colores del arcoíris en diferentes idiomas.
 
 ## Tecnologías utilizadas
 
-* Python
-* Git
-* GitHub
-* Visual Studio Code
+- Python
+- Git
+- GitHub
+- Visual Studio Code
 
 ## Conceptos practicados
 
-* Variables
-* Entrada de datos con `input()`
-* Condicionales `if`, `elif`, `else`
-* Ciclos `while`
-* Validación de datos
-* Manejo básico de errores
-* Organización de archivos en GitHub
+- Variables
+- Entrada de datos con `input()`
+- Condicionales `if`, `elif`, `else`
+- Ciclos `while`
+- Validación de datos
+- Manejo básico de errores
+- Organización de archivos en GitHub
 
 ## Objetivo
 
