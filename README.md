@@ -1,12 +1,14 @@
-# UCAMP Projects
+# Proyectos UCAMP
 
-A collection of projects, weekly challenges, and programming exercises completed during my training at **UCAMP**.
+Repositorio con proyectos, retos semanales y ejercicios de programación realizados durante mi formación en **UCAMP**.
 
-This repository documents my progress with Python fundamentals, programming logic, data validation, problem-solving, and version control with Git and GitHub.
+Este espacio documenta mi progreso en fundamentos de Python, lógica de programación, validación de datos, resolución de problemas y control de versiones con Git y GitHub.
 
-> **Resumen en español:** Este repositorio reúne los proyectos y retos que he desarrollado durante mi formación en UCAMP. Los programas están escritos principalmente en español porque forman parte de actividades académicas evaluadas en ese idioma.
+## Idioma del repositorio
 
-## Repository Structure
+El contenido de este repositorio está escrito principalmente en **español**, ya que las actividades, instrucciones y evaluaciones del bootcamp se realizan en este idioma.
+
+## Estructura del repositorio
 
 ```text
 Ucamp-Projects/
@@ -22,112 +24,112 @@ Ucamp-Projects/
 └── README.md
 ```
 
-## Main Projects
+## Proyectos principales
 
-### Module 1 — BMI Calculator
+### Módulo 1 — Calculadora de IMC
 
-**File:** [`Proyecto_Ucamp/Calculadora_de_IMC.py`](Proyecto_Ucamp/Calculadora_de_IMC.py)
+**Archivo:** [`Proyecto_Ucamp/Calculadora_de_IMC.py`](Proyecto_Ucamp/Calculadora_de_IMC.py)
 
-My first Python project. The program requests the user's name, age, weight, and height, validates the entered information, calculates the Body Mass Index (BMI), and displays the corresponding classification.
+Mi primer proyecto en Python. El programa solicita el nombre, edad, peso y estatura del usuario, valida la información ingresada, calcula el Índice de Masa Corporal (IMC) y muestra la clasificación correspondiente.
 
-Concepts practiced:
+Conceptos practicados:
 
-- User input with `input()`
-- Numeric conversion with `float()`
-- Data validation using `while`
-- Error handling with `try/except`
-- Conditional logic with `if`, `elif`, and `else`
-- Mathematical operations and formatted output
+- Entrada de datos con `input()`
+- Conversión numérica con `float()`
+- Validación de datos mediante ciclos `while`
+- Manejo de errores con `try/except`
+- Condicionales `if`, `elif` y `else`
+- Operaciones matemáticas y presentación de resultados
 
-### Module 2 — Data Validation and Operations
+### Módulo 2 — Validación y operaciones de datos
 
-**File:** [`Proyecto_Ucamp/Angel_Alfredo_Alpizar_Sanchez_proyectoM2.py`](Proyecto_Ucamp/Angel_Alfredo_Alpizar_Sanchez_proyectoM2.py)
+**Archivo:** [`Proyecto_Ucamp/Angel_Alfredo_Alpizar_Sanchez_proyectoM2.py`](Proyecto_Ucamp/Angel_Alfredo_Alpizar_Sanchez_proyectoM2.py)
 
-This project contains two exercises:
+Este proyecto contiene la solución de dos ejercicios:
 
-1. **Word Length:** verifies whether a word contains between 4 and 8 characters and reports whether letters are missing or exceeding the limit.
-2. **Cartesian Quadrant:** requests X and Y coordinates, rejects zero or non-integer values, and identifies the quadrant where the point is located.
+1. **Longitud de una palabra:** verifica si una palabra contiene entre 4 y 8 caracteres e indica si faltan o sobran letras.
+2. **Encuentra el cuadrante:** solicita las coordenadas X y Y, rechaza valores iguales a cero o datos que no sean números enteros e identifica el cuadrante en el que se encuentra el punto.
 
-Concepts practiced:
+Conceptos practicados:
 
-- String cleanup with `strip()`
-- Character counting with `len()`
-- Compound conditions
-- Repetition with `while True`
-- Input validation and `ValueError` handling
-- Cartesian-plane logic
-- Code comments and program organization
+- Limpieza de cadenas con `strip()`
+- Conteo de caracteres con `len()`
+- Condiciones compuestas
+- Repetición con `while True`
+- Validación de entradas y manejo de `ValueError`
+- Lógica del plano cartesiano
+- Comentarios y organización del código
 
-## Module 2 Weekly Challenges
+## Retos semanales del Módulo 2
 
-| Week | Exercise | Main concepts | File |
+| Semana | Ejercicio | Conceptos principales | Archivo |
 |---|---|---|---|
-| **5** | Calculates the difference between the current year and another year entered by the user. | Arithmetic operations, nested conditionals, absolute values | [`Semana5.py`](Retos_M2/Semana5.py) |
-| **6** | Requests and confirms a password that must begin with a number, allowing a maximum of three errors. | Strings, loops, counters, validation | [`Semana6.py`](Retos_M2/Semana6.py) |
-| **7** | Registers students and their grades, validates values from 0 to 10, and calculates each average. | Lists, nested loops, `try/except`, averages | [`Semana7.py`](Retos_M2/Semana7.py) |
-| **8** | Finds rainbow colors in a Spanish sentence and translates them into English or French. | Dictionaries, loops, string search, language selection | [`Semana8.py`](Retos_M2/Semana8.py) |
-| **9** | Displays the previous and next letters of the alphabet and includes an option to end the program. | Functions, indexes, validation, cyclic navigation, loops | [`Semana9.py`](Retos_M2/Semana9.py) |
+| **5** | Calcula la diferencia entre el año actual y otro año ingresado por el usuario. | Operaciones aritméticas, condicionales anidados y valores absolutos | [`Semana5.py`](Retos_M2/Semana5.py) |
+| **6** | Solicita y confirma una contraseña que debe comenzar con un número, permitiendo un máximo de tres errores. | Cadenas, ciclos, contadores y validación | [`Semana6.py`](Retos_M2/Semana6.py) |
+| **7** | Registra alumnos y calificaciones, valida valores entre 0 y 10 y calcula el promedio de cada alumno. | Listas, ciclos anidados, `try/except` y promedios | [`Semana7.py`](Retos_M2/Semana7.py) |
+| **8** | Identifica colores del arcoíris dentro de una oración en español y los traduce al inglés o francés. | Diccionarios, ciclos, búsqueda en cadenas y selección de idioma | [`Semana8.py`](Retos_M2/Semana8.py) |
+| **9** | Muestra la letra anterior y la siguiente dentro del alfabeto e incluye una opción para finalizar el programa. | Funciones, índices, validación, navegación cíclica y ciclos | [`Semana9.py`](Retos_M2/Semana9.py) |
 
-## Technologies and Tools
+## Tecnologías y herramientas
 
 - Python
 - Git
 - GitHub
 - Visual Studio Code
-- Windows and Linux
+- Windows y Linux
 
-## Skills Practiced
+## Habilidades practicadas
 
-- Variables and data types
-- User input and formatted output
-- Arithmetic and comparison operators
-- Conditional statements
-- `while` and `for` loops
-- Lists and dictionaries
-- Functions
-- String methods
-- Input validation
-- Basic exception handling
-- Code organization and documentation
-- Version control and repository management
+- Variables y tipos de datos
+- Entrada de datos y salida con formato
+- Operadores aritméticos y de comparación
+- Estructuras condicionales
+- Ciclos `while` y `for`
+- Listas y diccionarios
+- Funciones
+- Métodos de cadenas
+- Validación de datos
+- Manejo básico de excepciones
+- Organización y documentación del código
+- Control de versiones y administración de repositorios
 
-## Running the Programs
+## Cómo ejecutar los programas
 
-The exercises only require Python and do not use third-party packages.
+Los ejercicios solamente requieren Python y no utilizan paquetes externos.
 
-1. Clone the repository:
+1. Clonar el repositorio:
 
    ```bash
    git clone https://github.com/alpizars2005-oss/Ucamp-Projects.git
    ```
 
-2. Enter the repository:
+2. Entrar a la carpeta del repositorio:
 
    ```bash
    cd Ucamp-Projects
    ```
 
-3. Run any exercise, for example:
+3. Ejecutar cualquiera de los programas, por ejemplo:
 
    ```bash
    python Proyecto_Ucamp/Calculadora_de_IMC.py
    ```
 
-   On some Linux systems, the command may be:
+   En algunos sistemas Linux puede ser necesario utilizar:
 
    ```bash
    python3 Proyecto_Ucamp/Calculadora_de_IMC.py
    ```
 
-## Learning Reflection
+## Reflexión de aprendizaje
 
-These projects show my progress from writing my first interactive Python program to creating solutions with stronger validations, nested control structures, collections, functions, and error handling.
+Estos proyectos muestran mi progreso desde la creación de mi primer programa interactivo en Python hasta el desarrollo de soluciones con validaciones más completas, estructuras de control anidadas, colecciones, funciones y manejo de errores.
 
-The bootcamp has helped me understand that programming is not only about making a program work, but also about breaking a problem into smaller steps, anticipating invalid input, organizing code clearly, and documenting the solution so that another person can understand it.
+El bootcamp me ha ayudado a comprender que programar no consiste únicamente en lograr que un programa funcione, sino también en dividir un problema en pasos más pequeños, anticipar entradas incorrectas, organizar el código de forma clara y documentar la solución para que otras personas puedan entenderla.
 
-I will continue updating this repository as I complete new modules, challenges, and projects.
+Continuaré actualizando este repositorio conforme complete nuevos módulos, retos y proyectos.
 
-## Author
+## Autor
 
 **Angel Alfredo Alpizar Sanchez**  
-Computer Systems Engineering student and UCAMP learner.
+Estudiante de Ingeniería en Sistemas Computacionales y alumno de UCAMP.
