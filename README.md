@@ -1,60 +1,135 @@
-# UCAMP Projects
+# Proyectos UCAMP
 
-Repositorio con proyectos, retos y ejercicios realizados durante mi formación en programación en UCAMP.
+Repositorio con proyectos, retos semanales y ejercicios de programación realizados durante mi formación en **UCAMP**.
 
-Este espacio documenta mi progreso practicando fundamentos de Python, lógica de programación, validación de datos y control de versiones con Git/GitHub.
+Este espacio documenta mi progreso en fundamentos de Python, lógica de programación, validación de datos, resolución de problemas y control de versiones con Git y GitHub.
 
-## Contenido
+## Idioma del repositorio
 
-### Proyecto UCAMP
+El contenido de este repositorio está escrito principalmente en **español**, ya que las actividades, instrucciones y evaluaciones del bootcamp se realizan en este idioma.
 
-Carpeta con mis primeros proyectos prácticos del bootcamp.
-
-Incluye:
-
-- **Calculadora de IMC:** mi primer proyecto en Python.
-- **Validación y operaciones de datos:** proyecto del Módulo 2, donde se resuelven dos ejercicios:
-  - Validar la longitud de una palabra.
-  - Identificar el cuadrante de un punto en el plano cartesiano.
-
-Archivo principal del proyecto Módulo 2:
+## Estructura del repositorio
 
 ```text
-Proyecto_Ucamp/Angel_Alfredo_Alpizar_Sanchez_proyectoM2.py
+Ucamp-Projects/
+├── Proyecto_Ucamp/
+│   ├── Calculadora_de_IMC.py
+│   └── Angel_Alfredo_Alpizar_Sanchez_proyectoM2.py
+├── Retos_M2/
+│   ├── Semana5.py
+│   ├── Semana6.py
+│   ├── Semana7.py
+│   ├── Semana8.py
+│   └── Semana9.py
+└── README.md
 ```
 
-### Retos Módulo 2
+## Proyectos principales
 
-Carpeta con los trabajos semanales del Módulo 2.
+### Módulo 1 — Calculadora de IMC
 
-Incluye:
+**Archivo:** [`Proyecto_Ucamp/Calculadora_de_IMC.py`](Proyecto_Ucamp/Calculadora_de_IMC.py)
 
-- **Semana 5:** ejercicio con operaciones y entrada de datos.
-- **Semana 6:** validación de contraseña.
-- **Semana 7:** práctica de estructuras de control.
-- **Semana 8:** diccionario de colores del arcoíris en diferentes idiomas.
+Mi primer proyecto en Python. El programa solicita el nombre, edad, peso y estatura del usuario, valida la información ingresada, calcula el Índice de Masa Corporal (IMC) y muestra la clasificación correspondiente.
 
-## Tecnologías utilizadas
+Conceptos practicados:
+
+- Entrada de datos con `input()`
+- Conversión numérica con `float()`
+- Validación de datos mediante ciclos `while`
+- Manejo de errores con `try/except`
+- Condicionales `if`, `elif` y `else`
+- Operaciones matemáticas y presentación de resultados
+
+### Módulo 2 — Validación y operaciones de datos
+
+**Archivo:** [`Proyecto_Ucamp/Angel_Alfredo_Alpizar_Sanchez_proyectoM2.py`](Proyecto_Ucamp/Angel_Alfredo_Alpizar_Sanchez_proyectoM2.py)
+
+Este proyecto contiene la solución de dos ejercicios:
+
+1. **Longitud de una palabra:** verifica si una palabra contiene entre 4 y 8 caracteres e indica si faltan o sobran letras.
+2. **Encuentra el cuadrante:** solicita las coordenadas X y Y, rechaza valores iguales a cero o datos que no sean números enteros e identifica el cuadrante en el que se encuentra el punto.
+
+Conceptos practicados:
+
+- Limpieza de cadenas con `strip()`
+- Conteo de caracteres con `len()`
+- Condiciones compuestas
+- Repetición con `while True`
+- Validación de entradas y manejo de `ValueError`
+- Lógica del plano cartesiano
+- Comentarios y organización del código
+
+## Retos semanales del Módulo 2
+
+| Semana | Ejercicio | Conceptos principales | Archivo |
+|---|---|---|---|
+| **5** | Calcula la diferencia entre el año actual y otro año ingresado por el usuario. | Operaciones aritméticas, condicionales anidados y valores absolutos | [`Semana5.py`](Retos_M2/Semana5.py) |
+| **6** | Solicita y confirma una contraseña que debe comenzar con un número, permitiendo un máximo de tres errores. | Cadenas, ciclos, contadores y validación | [`Semana6.py`](Retos_M2/Semana6.py) |
+| **7** | Registra alumnos y calificaciones, valida valores entre 0 y 10 y calcula el promedio de cada alumno. | Listas, ciclos anidados, `try/except` y promedios | [`Semana7.py`](Retos_M2/Semana7.py) |
+| **8** | Identifica colores del arcoíris dentro de una oración en español y los traduce al inglés o francés. | Diccionarios, ciclos, búsqueda en cadenas y selección de idioma | [`Semana8.py`](Retos_M2/Semana8.py) |
+| **9** | Muestra la letra anterior y la siguiente dentro del alfabeto e incluye una opción para finalizar el programa. | Funciones, índices, validación, navegación cíclica y ciclos | [`Semana9.py`](Retos_M2/Semana9.py) |
+
+## Tecnologías y herramientas
 
 - Python
 - Git
 - GitHub
 - Visual Studio Code
+- Windows y Linux
 
-## Conceptos practicados
+## Habilidades practicadas
 
-- Variables
-- Entrada de datos con `input()`
-- Condicionales `if`, `elif`, `else`
-- Ciclos `while`
+- Variables y tipos de datos
+- Entrada de datos y salida con formato
+- Operadores aritméticos y de comparación
+- Estructuras condicionales
+- Ciclos `while` y `for`
+- Listas y diccionarios
+- Funciones
+- Métodos de cadenas
 - Validación de datos
-- Manejo básico de errores
-- Organización de archivos en GitHub
+- Manejo básico de excepciones
+- Organización y documentación del código
+- Control de versiones y administración de repositorios
 
-## Objetivo
+## Cómo ejecutar los programas
 
-Fortalecer mis bases como futuro desarrollador mediante la práctica constante, la resolución de problemas y la documentación de mi aprendizaje.
+Los ejercicios solamente requieren Python y no utilizan paquetes externos.
 
-## Nota
+1. Clonar el repositorio:
 
-Los ejercicios están escritos principalmente en español porque forman parte de actividades académicas evaluadas en ese idioma.
+   ```bash
+   git clone https://github.com/alpizars2005-oss/Ucamp-Projects.git
+   ```
+
+2. Entrar a la carpeta del repositorio:
+
+   ```bash
+   cd Ucamp-Projects
+   ```
+
+3. Ejecutar cualquiera de los programas, por ejemplo:
+
+   ```bash
+   python Proyecto_Ucamp/Calculadora_de_IMC.py
+   ```
+
+   En algunos sistemas Linux puede ser necesario utilizar:
+
+   ```bash
+   python3 Proyecto_Ucamp/Calculadora_de_IMC.py
+   ```
+
+## Reflexión de aprendizaje
+
+Estos proyectos muestran mi progreso desde la creación de mi primer programa interactivo en Python hasta el desarrollo de soluciones con validaciones más completas, estructuras de control anidadas, colecciones, funciones y manejo de errores.
+
+El bootcamp me ha ayudado a comprender que programar no consiste únicamente en lograr que un programa funcione, sino también en dividir un problema en pasos más pequeños, anticipar entradas incorrectas, organizar el código de forma clara y documentar la solución para que otras personas puedan entenderla.
+
+Continuaré actualizando este repositorio conforme complete nuevos módulos, retos y proyectos.
+
+## Autor
+
+**Angel Alfredo Alpizar Sanchez**  
+Estudiante de Ingeniería en Sistemas Computacionales y alumno de UCAMP.
