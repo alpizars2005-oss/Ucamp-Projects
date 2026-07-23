@@ -19,8 +19,14 @@ Ucamp-Projects/
 │   ├── Semana5.py
 │   ├── Semana6.py
 │   ├── Semana7.py
-│   ├── Semana8.py
-│   └── Semana9.py
+│   └── Semana8.py
+├── Retos_M3/
+│   ├── Semana9.py
+│   ├── Semana10.py
+│   ├── README.md
+│   └── Semana11/
+│       ├── main.py
+│       └── m_retosemanal.py
 └── README.md
 ```
 
@@ -68,7 +74,16 @@ Conceptos practicados:
 | **6** | Solicita y confirma una contraseña que debe comenzar con un número, permitiendo un máximo de tres errores. | Cadenas, ciclos, contadores y validación | [`Semana6.py`](Retos_M2/Semana6.py) |
 | **7** | Registra alumnos y calificaciones, valida valores entre 0 y 10 y calcula el promedio de cada alumno. | Listas, ciclos anidados, `try/except` y promedios | [`Semana7.py`](Retos_M2/Semana7.py) |
 | **8** | Identifica colores del arcoíris dentro de una oración en español y los traduce al inglés o francés. | Diccionarios, ciclos, búsqueda en cadenas y selección de idioma | [`Semana8.py`](Retos_M2/Semana8.py) |
-| **9** | Muestra la letra anterior y la siguiente dentro del alfabeto e incluye una opción para finalizar el programa. | Funciones, índices, validación, navegación cíclica y ciclos | [`Semana9.py`](Retos_M2/Semana9.py) |
+
+## Retos semanales del Módulo 3
+
+El Módulo 3 se enfoca en funciones, módulos y organización de programas. Los retos están documentados también en [`Retos_M3/README.md`](Retos_M3/README.md).
+
+| Semana | Ejercicio | Conceptos principales | Archivo |
+|---|---|---|---|
+| **9** | Muestra la letra anterior y la siguiente dentro del alfabeto e incluye una opción para finalizar el programa. | Funciones, índices, validación, navegación cíclica y ciclos | [`Semana9.py`](Retos_M3/Semana9.py) |
+| **10** | Crea dos listas y elimina de la primera los elementos que también aparecen en la segunda. | Funciones, listas, conjuntos, valores de retorno y comparación de cadenas | [`Semana10.py`](Retos_M3/Semana10.py) |
+| **11** | Crea varias listas y elimina de cada una los elementos que aparecen en listas posteriores. | Lista de listas, funciones, módulos, importaciones y conjuntos | [`Semana11`](Retos_M3/Semana11/) |
 
 ## Tecnologías y herramientas
 
@@ -85,8 +100,9 @@ Conceptos practicados:
 - Operadores aritméticos y de comparación
 - Estructuras condicionales
 - Ciclos `while` y `for`
-- Listas y diccionarios
-- Funciones
+- Listas, diccionarios y conjuntos
+- Funciones, parámetros y valores de retorno
+- Creación e importación de módulos
 - Métodos de cadenas
 - Validación de datos
 - Manejo básico de excepciones
@@ -112,18 +128,18 @@ Los ejercicios solamente requieren Python y no utilizan paquetes externos.
 3. Ejecutar cualquiera de los programas, por ejemplo:
 
    ```bash
-   python Proyecto_Ucamp/Calculadora_de_IMC.py
+   python Retos_M3/Semana11/main.py
    ```
 
    En algunos sistemas Linux puede ser necesario utilizar:
 
    ```bash
-   python3 Proyecto_Ucamp/Calculadora_de_IMC.py
+   python3 Retos_M3/Semana11/main.py
    ```
 
 ## Reflexión de aprendizaje
 
-Estos proyectos muestran mi progreso desde la creación de mi primer programa interactivo en Python hasta el desarrollo de soluciones con validaciones más completas, estructuras de control anidadas, colecciones, funciones y manejo de errores.
+Estos proyectos muestran mi progreso desde la creación de mi primer programa interactivo en Python hasta el desarrollo de soluciones con validaciones más completas, estructuras de control, colecciones, funciones y programas organizados en módulos.
 
 El bootcamp me ha ayudado a comprender que programar no consiste únicamente en lograr que un programa funcione, sino también en dividir un problema en pasos más pequeños, anticipar entradas incorrectas, organizar el código de forma clara y documentar la solución para que otras personas puedan entenderla.
 
