@@ -2,7 +2,7 @@
 
 Repositorio con proyectos, retos semanales y ejercicios de programación realizados durante mi formación en **UCAMP**.
 
-Este espacio documenta mi progreso en fundamentos de Python, lógica de programación, validación de datos, resolución de problemas, funciones, módulos, números aleatorios, gráficas y control de versiones con Git y GitHub.
+Este espacio documenta mi progreso en fundamentos de Python, lógica de programación, validación de datos, resolución de problemas, funciones, módulos, números aleatorios, gráficas, manejo de excepciones y control de versiones con Git y GitHub.
 
 ## Idioma del repositorio
 
@@ -29,6 +29,9 @@ Ucamp-Projects/
 │   └── Semana11/
 │       ├── main.py
 │       └── m_retosemanal.py
+├── Retos_M4/
+│   ├── Semana13.py
+│   └── README.md
 ├── requirements.txt
 └── README.md
 ```
@@ -118,6 +121,14 @@ El Módulo 3 se enfoca en funciones, módulos, paquetes, números aleatorios y r
 | **11** | Crea varias listas y elimina de cada una los elementos que aparecen en listas posteriores. | Lista de listas, funciones, módulos, importaciones y conjuntos | [`Semana11`](Retos_M3/Semana11/) |
 | **12** | Solicita un rango de años, registra las ventas de cada año y genera una gráfica de líneas. | Funciones, validación, rangos, listas y gráficas con Matplotlib | [`Semana12.py`](Retos_M3/Semana12.py) |
 
+## Retos semanales del Módulo 4
+
+El Módulo 4 inicia con el manejo de errores y excepciones para evitar que entradas incorrectas interrumpan los programas. Los retos están documentados también en [`Retos_M4/README.md`](Retos_M4/README.md).
+
+| Semana | Ejercicio | Conceptos principales | Archivo |
+|---|---|---|---|
+| **13** | Registra alumnos y calificaciones mediante un menú, calcula promedios y valida entradas incorrectas sin detener la ejecución. | `try/except`, `ValueError`, validación, listas, diccionarios, funciones y ciclos | [`Semana13.py`](Retos_M4/Semana13.py) |
+
 ## Tecnologías y herramientas
 
 - Python
@@ -141,7 +152,7 @@ El Módulo 3 se enfoca en funciones, módulos, paquetes, números aleatorios y r
 - Gráficas de líneas e histogramas
 - Métodos de cadenas
 - Validación de datos
-- Manejo básico de excepciones
+- Manejo de errores y excepciones con `try/except`
 - Organización y documentación del código
 - Control de versiones y administración de repositorios
 
@@ -154,16 +165,16 @@ El Módulo 3 se enfoca en funciones, módulos, paquetes, números aleatorios y r
    cd Ucamp-Projects
    ```
 
-2. Instalar la dependencia necesaria para las gráficas:
+2. Instalar la dependencia necesaria para los ejercicios con gráficas:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Ejecutar el reto de la semana 12:
+3. Ejecutar el reto de la semana 13:
 
    ```bash
-   python Retos_M3/Semana12.py
+   python Retos_M4/Semana13.py
    ```
 
 4. Ejecutar el proyecto del Módulo 3:
@@ -176,7 +187,7 @@ En algunos sistemas Linux puede ser necesario utilizar `python3` y `pip3`.
 
 ## Reflexión de aprendizaje
 
-Estos proyectos muestran mi progreso desde la creación de mi primer programa interactivo en Python hasta el desarrollo de soluciones con validaciones más completas, estructuras de control, colecciones, funciones, módulos, simulaciones y representaciones gráficas.
+Estos proyectos muestran mi progreso desde la creación de mi primer programa interactivo en Python hasta el desarrollo de soluciones con validaciones más completas, estructuras de control, colecciones, funciones, módulos, simulaciones, representaciones gráficas y manejo de excepciones.
 
 El bootcamp me ha ayudado a comprender que programar no consiste únicamente en lograr que un programa funcione, sino también en dividir un problema en pasos más pequeños, anticipar entradas incorrectas, organizar el código de forma clara y documentar la solución para que otras personas puedan entenderla.
 
