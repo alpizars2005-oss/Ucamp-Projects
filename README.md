@@ -2,7 +2,7 @@
 
 Repositorio con proyectos, retos semanales y ejercicios de programación realizados durante mi formación en **UCAMP**.
 
-Este espacio documenta mi progreso en fundamentos de Python, lógica de programación, validación de datos, resolución de problemas, funciones, módulos, números aleatorios, gráficas, manejo de excepciones y control de versiones con Git y GitHub.
+Este espacio documenta mi progreso en fundamentos de Python, lógica de programación, validación de datos, resolución de problemas, funciones, módulos, números aleatorios, gráficas, manejo de excepciones, archivos y control de versiones con Git y GitHub.
 
 ## Idioma del repositorio
 
@@ -31,7 +31,10 @@ Ucamp-Projects/
 │       └── m_retosemanal.py
 ├── Retos_M4/
 │   ├── Semana13.py
-│   └── README.md
+│   ├── README.md
+│   └── Semana14/
+│       ├── Semana14.py
+│       └── contactos.txt
 ├── requirements.txt
 └── README.md
 ```
@@ -123,11 +126,12 @@ El Módulo 3 se enfoca en funciones, módulos, paquetes, números aleatorios y r
 
 ## Retos semanales del Módulo 4
 
-El Módulo 4 inicia con el manejo de errores y excepciones para evitar que entradas incorrectas interrumpan los programas. Los retos están documentados también en [`Retos_M4/README.md`](Retos_M4/README.md).
+El Módulo 4 trabaja manejo de errores y excepciones, archivos y persistencia de datos. Los retos están documentados también en [`Retos_M4/README.md`](Retos_M4/README.md).
 
 | Semana | Ejercicio | Conceptos principales | Archivo |
 |---|---|---|---|
 | **13** | Registra alumnos y calificaciones mediante un menú, calcula promedios y valida entradas incorrectas sin detener la ejecución. | `try/except`, `ValueError`, validación, listas, diccionarios, funciones y ciclos | [`Semana13.py`](Retos_M4/Semana13.py) |
+| **14** | Lee contactos desde un archivo, los muestra numerados, permite modificar nombre, teléfono y correo, y guarda los cambios. | Lectura y escritura de archivos, `Path`, validación, excepciones, listas, diccionarios y persistencia | [`Semana14/`](Retos_M4/Semana14/) |
 
 ## Tecnologías y herramientas
 
@@ -153,6 +157,7 @@ El Módulo 4 inicia con el manejo de errores y excepciones para evitar que entra
 - Métodos de cadenas
 - Validación de datos
 - Manejo de errores y excepciones con `try/except`
+- Lectura, escritura y actualización de archivos
 - Organización y documentación del código
 - Control de versiones y administración de repositorios
 
@@ -177,7 +182,13 @@ El Módulo 4 inicia con el manejo de errores y excepciones para evitar que entra
    python Retos_M4/Semana13.py
    ```
 
-4. Ejecutar el proyecto del Módulo 3:
+4. Ejecutar el reto de la semana 14:
+
+   ```bash
+   python Retos_M4/Semana14/Semana14.py
+   ```
+
+5. Ejecutar el proyecto del Módulo 3:
 
    ```bash
    python Proyecto_Ucamp/Angel_Alfredo_Alpizar_Sanchez_proyectoM3.py
@@ -187,7 +198,7 @@ En algunos sistemas Linux puede ser necesario utilizar `python3` y `pip3`.
 
 ## Reflexión de aprendizaje
 
-Estos proyectos muestran mi progreso desde la creación de mi primer programa interactivo en Python hasta el desarrollo de soluciones con validaciones más completas, estructuras de control, colecciones, funciones, módulos, simulaciones, representaciones gráficas y manejo de excepciones.
+Estos proyectos muestran mi progreso desde la creación de mi primer programa interactivo en Python hasta el desarrollo de soluciones con validaciones más completas, estructuras de control, colecciones, funciones, módulos, simulaciones, representaciones gráficas, manejo de excepciones y persistencia de datos en archivos.
 
 El bootcamp me ha ayudado a comprender que programar no consiste únicamente en lograr que un programa funcione, sino también en dividir un problema en pasos más pequeños, anticipar entradas incorrectas, organizar el código de forma clara y documentar la solución para que otras personas puedan entenderla.
 
