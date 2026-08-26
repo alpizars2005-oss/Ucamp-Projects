@@ -138,7 +138,7 @@ El Módulo 4 trabaja manejo de errores y excepciones, archivos, persistencia de 
 |---|---|---|---|
 | **13** | Registra alumnos y calificaciones mediante un menú, calcula promedios y valida entradas incorrectas sin detener la ejecución. | `try/except`, `ValueError`, validación, listas, diccionarios, funciones y ciclos | [`Semana13.py`](Retos_M4/Semana13.py) |
 | **14** | Lee contactos desde un archivo, los muestra numerados, permite modificar nombre, teléfono y correo, y guarda los cambios. | Lectura y escritura de archivos, `Path`, validación, excepciones, listas, diccionarios y persistencia | [`Semana14/`](Retos_M4/Semana14/) |
-| **15** | Consulta el clima actual mediante OpenWeather One Call API 3.0 usando coordenadas y una API key protegida. | HTTP GET, APIs REST, JSON, variables de entorno, validación, manejo de errores y pruebas unitarias | [`Semana15/`](Retos_M4/Semana15/) |
+| **15** | Consulta el clima actual mediante OpenWeather Current Weather API usando coordenadas y una API key protegida, sin requerir una suscripción de facturación de One Call. | HTTP GET, APIs REST, JSON, variables de entorno, validación, manejo de errores y pruebas unitarias | [`Semana15/`](Retos_M4/Semana15/) |
 
 ## Tecnologías y herramientas
 
@@ -206,6 +206,8 @@ El Módulo 4 trabaja manejo de errores y excepciones, archivos, persistencia de 
    $env:OPENWEATHER_API_KEY="TU_API_KEY"
    python Retos_M4/Semana15/Semana15.py
    ```
+
+   La semana 15 usa **Current Weather API**, incluida en el acceso gratuito de OpenWeather, para evitar requerir datos de pago para el ejercicio académico.
 
 6. Ejecutar las pruebas de la semana 15:
 
