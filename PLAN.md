@@ -46,3 +46,35 @@ OpenWeather One Call API 3.0 requiere una suscripción de facturación separada.
 ## Riesgo y rollback
 
 Riesgo bajo. Los cambios se limitan a la semana 15 y su documentación. La migración conserva el objetivo pedagógico del ejercicio: consumir OpenWeather mediante HTTP GET, coordenadas, API key y JSON. Para revertir, se puede regresar al commit anterior de la semana 15.
+
+---
+
+# Auditoría general del repositorio — 2026-08-26
+
+## Objetivo
+
+Convertir el repositorio de ejercicios en un portafolio académico verificable sin reescribir soluciones históricas ni ocultar la progresión de aprendizaje.
+
+## Hallazgos
+
+- Ya existen pruebas unitarias para Semana 15, pero no hay CI a nivel raíz que las ejecute automáticamente.
+- El repositorio contiene ejercicios independientes de varias semanas; una verificación de sintaxis con `compileall` aporta cobertura amplia sin ejecutar código interactivo.
+- Faltan convenciones raíz de editor/archivos temporales, aunque algunos subdirectorios ya tienen `.gitignore` propios.
+
+## Commits planeados
+
+6. **Añadir CI académico reproducible**
+   - Compilar los ejercicios Python sin ejecutarlos.
+   - Ejecutar las pruebas de Semana 15 sin red ni credenciales reales.
+   - Fijar las GitHub Actions a SHAs inmutables y usar permisos `contents: read`.
+
+7. **Normalizar higiene del repositorio**
+   - Añadir `.editorconfig` y `.gitignore` raíz conservadores.
+   - No mover ni renombrar ejercicios entregados.
+
+8. **Documentar verificación**
+   - Actualizar README con comandos de comprobación local y estado de CI.
+
+## Riesgo y rollback
+
+Riesgo bajo: no se cambia la lógica de los retos. CI y archivos de higiene pueden revertirse de forma independiente.
