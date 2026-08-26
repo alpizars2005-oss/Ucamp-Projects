@@ -30,14 +30,17 @@ class RespuestaFalsa:
 class Semana15Tests(unittest.TestCase):
     def setUp(self):
         self.datos_api = {
-            "timezone": "America/Mexico_City",
-            "current": {
+            "coord": {"lon": -99.1332, "lat": 19.4326},
+            "weather": [{"description": "nubes dispersas"}],
+            "main": {
                 "temp": 22.4,
                 "feels_like": 22.1,
                 "humidity": 61,
-                "wind_speed": 3.2,
-                "weather": [{"description": "nubes dispersas"}],
             },
+            "wind": {"speed": 3.2},
+            "sys": {"country": "MX"},
+            "timezone": -21600,
+            "name": "Ciudad de México",
         }
 
     def test_validar_coordenadas_acepta_limites(self):
@@ -65,22 +68,30 @@ class Semana15Tests(unittest.TestCase):
         self.assertEqual(parametros["appid"], ["clave-prueba"])
         self.assertEqual(parametros["units"], ["metric"])
         self.assertEqual(parametros["lang"], ["es"])
+        self.assertNotIn("exclude", parametros)
 
     def test_interpretar_respuesta_extrae_datos(self):
         clima = semana15.interpretar_respuesta(self.datos_api)
 
+        self.assertEqual(clima["localidad"], "Ciudad de México")
+        self.assertEqual(clima["pais"], "MX")
         self.assertEqual(clima["temperatura"], 22.4)
         self.assertEqual(clima["humedad"], 61)
         self.assertEqual(clima["descripcion"], "Nubes dispersas")
-        self.assertEqual(clima["zona_horaria"], "America/Mexico_City")
+        self.assertEqual(clima["zona_horaria"], "UTC-06:00")
 
     def test_interpretar_respuesta_rechaza_datos_incompletos(self):
         with self.assertRaises(semana15.ClimaError):
-            semana15.interpretar_respuesta({"current": {}})
+            semana15.interpretar_respuesta({"main": {}})
+
+    def test_formatear_desfase_utc(self):
+        self.assertEqual(semana15.formatear_desfase_utc(19800), "UTC+05:30")
+        self.assertEqual(semana15.formatear_desfase_utc(-21600), "UTC-06:00")
 
     def test_consultar_clima_usa_respuesta_simulada(self):
         def urlopen_falso(url, timeout):
             self.assertIn("appid=clave-prueba", url)
+            self.assertIn("/data/2.5/weather?", url)
             self.assertEqual(timeout, semana15.TIMEOUT_SEGUNDOS)
             return RespuestaFalsa(self.datos_api)
 
