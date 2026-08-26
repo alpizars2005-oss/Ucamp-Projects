@@ -1,4 +1,4 @@
-"""Reto semanal: consultar el clima con OpenWeather One Call API 3.0.
+"""Reto semanal: consultar el clima con OpenWeather Current Weather API.
 
 La API key se obtiene de la variable de entorno ``OPENWEATHER_API_KEY`` para
 no guardar credenciales dentro del código ni del repositorio.
@@ -10,7 +10,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import urlopen
 
-API_URL = "https://api.openweathermap.org/data/3.0/onecall"
+API_URL = "https://api.openweathermap.org/data/2.5/weather"
 TIMEOUT_SEGUNDOS = 10
 
 
@@ -19,14 +19,7 @@ class ClimaError(Exception):
 
 
 def obtener_api_key():
-    """Obtiene la API key desde una variable de entorno.
-
-    Returns:
-        str: API key configurada en ``OPENWEATHER_API_KEY``.
-
-    Raises:
-        ClimaError: Si la variable no existe o está vacía.
-    """
+    """Obtiene la API key desde una variable de entorno."""
     api_key = os.getenv("OPENWEATHER_API_KEY", "").strip()
 
     if not api_key:
@@ -48,7 +41,7 @@ def validar_coordenadas(latitud, longitud):
 
 
 def construir_url(latitud, longitud, api_key):
-    """Construye la URL de una petición GET para One Call API 3.0."""
+    """Construye la URL GET para OpenWeather Current Weather API."""
     validar_coordenadas(latitud, longitud)
 
     if not api_key or not api_key.strip():
@@ -60,25 +53,42 @@ def construir_url(latitud, longitud, api_key):
         "appid": api_key.strip(),
         "units": "metric",
         "lang": "es",
-        "exclude": "minutely,hourly,daily,alerts",
     }
 
     return f"{API_URL}?{urlencode(parametros)}"
 
 
+def formatear_desfase_utc(segundos):
+    """Convierte un desfase horario en segundos a un texto UTC±HH:MM."""
+    try:
+        segundos = int(segundos)
+    except (TypeError, ValueError) as error:
+        raise ClimaError("OpenWeather devolvió un desfase horario inválido.") from error
+
+    signo = "+" if segundos >= 0 else "-"
+    segundos = abs(segundos)
+    horas, resto = divmod(segundos, 3600)
+    minutos = resto // 60
+    return f"UTC{signo}{horas:02d}:{minutos:02d}"
+
+
 def interpretar_respuesta(datos):
     """Extrae los datos principales del clima desde la respuesta JSON."""
     try:
-        actual = datos["current"]
-        descripcion = actual["weather"][0]["description"]
+        principal = datos["main"]
+        viento = datos["wind"]
+        descripcion = datos["weather"][0]["description"]
+        sistema = datos.get("sys") or {}
 
         return {
-            "temperatura": float(actual["temp"]),
-            "sensacion": float(actual["feels_like"]),
-            "humedad": int(actual["humidity"]),
-            "viento": float(actual["wind_speed"]),
+            "localidad": str(datos.get("name") or "No disponible"),
+            "pais": str(sistema.get("country") or "No disponible"),
+            "temperatura": float(principal["temp"]),
+            "sensacion": float(principal["feels_like"]),
+            "humedad": int(principal["humidity"]),
+            "viento": float(viento["speed"]),
             "descripcion": str(descripcion).capitalize(),
-            "zona_horaria": str(datos.get("timezone", "No disponible")),
+            "zona_horaria": formatear_desfase_utc(datos.get("timezone", 0)),
         }
     except (KeyError, IndexError, TypeError, ValueError) as error:
         raise ClimaError(
@@ -135,6 +145,7 @@ def mostrar_clima(clima, latitud, longitud):
     print("\n" + "=" * 52)
     print("CLIMA ACTUAL")
     print("=" * 52)
+    print(f"Localidad: {clima['localidad']} ({clima['pais']})")
     print(f"Coordenadas: {latitud:.4f}, {longitud:.4f}")
     print(f"Condición: {clima['descripcion']}")
     print(f"Temperatura: {clima['temperatura']:.1f} °C")
@@ -146,7 +157,7 @@ def mostrar_clima(clima, latitud, longitud):
 
 def ejecutar_programa():
     """Controla la ejecución interactiva del reto de la semana 15."""
-    print("Consulta del clima con OpenWeather One Call API 3.0")
+    print("Consulta del clima con OpenWeather Current Weather API")
     print("Ingresa las coordenadas de la localidad que deseas consultar.\n")
 
     latitud = solicitar_coordenada("latitud", -90, 90)
