@@ -2,7 +2,7 @@
 
 Repositorio con proyectos, retos semanales y ejercicios de programación realizados durante mi formación en **UCAMP**.
 
-Este espacio documenta mi progreso en fundamentos de Python, lógica de programación, validación de datos, resolución de problemas, funciones, módulos, números aleatorios, gráficas, manejo de excepciones, archivos y control de versiones con Git y GitHub.
+Este espacio documenta mi progreso en fundamentos de Python, lógica de programación, validación de datos, resolución de problemas, funciones, módulos, números aleatorios, gráficas, manejo de excepciones, archivos, consumo de APIs y control de versiones con Git y GitHub.
 
 ## Idioma del repositorio
 
@@ -32,9 +32,15 @@ Ucamp-Projects/
 ├── Retos_M4/
 │   ├── Semana13.py
 │   ├── README.md
-│   └── Semana14/
-│       ├── Semana14.py
-│       └── contactos.txt
+│   ├── Semana14/
+│   │   ├── Semana14.py
+│   │   └── contactos.txt
+│   └── Semana15/
+│       ├── Semana15.py
+│       ├── README.md
+│       └── tests/
+│           └── test_semana15.py
+├── PLAN.md
 ├── requirements.txt
 └── README.md
 ```
@@ -126,17 +132,19 @@ El Módulo 3 se enfoca en funciones, módulos, paquetes, números aleatorios y r
 
 ## Retos semanales del Módulo 4
 
-El Módulo 4 trabaja manejo de errores y excepciones, archivos y persistencia de datos. Los retos están documentados también en [`Retos_M4/README.md`](Retos_M4/README.md).
+El Módulo 4 trabaja manejo de errores y excepciones, archivos, persistencia de datos y consumo de APIs. Los retos están documentados también en [`Retos_M4/README.md`](Retos_M4/README.md).
 
 | Semana | Ejercicio | Conceptos principales | Archivo |
 |---|---|---|---|
 | **13** | Registra alumnos y calificaciones mediante un menú, calcula promedios y valida entradas incorrectas sin detener la ejecución. | `try/except`, `ValueError`, validación, listas, diccionarios, funciones y ciclos | [`Semana13.py`](Retos_M4/Semana13.py) |
 | **14** | Lee contactos desde un archivo, los muestra numerados, permite modificar nombre, teléfono y correo, y guarda los cambios. | Lectura y escritura de archivos, `Path`, validación, excepciones, listas, diccionarios y persistencia | [`Semana14/`](Retos_M4/Semana14/) |
+| **15** | Consulta el clima actual mediante OpenWeather One Call API 3.0 usando coordenadas y una API key protegida. | HTTP GET, APIs REST, JSON, variables de entorno, validación, manejo de errores y pruebas unitarias | [`Semana15/`](Retos_M4/Semana15/) |
 
 ## Tecnologías y herramientas
 
 - Python
 - Matplotlib
+- OpenWeather API
 - Git
 - GitHub
 - Visual Studio Code
@@ -158,6 +166,10 @@ El Módulo 4 trabaja manejo de errores y excepciones, archivos y persistencia de
 - Validación de datos
 - Manejo de errores y excepciones con `try/except`
 - Lectura, escritura y actualización de archivos
+- Peticiones HTTP GET y consumo de APIs REST
+- Lectura de respuestas JSON
+- Manejo seguro de API keys mediante variables de entorno
+- Pruebas unitarias con `unittest`
 - Organización y documentación del código
 - Control de versiones y administración de repositorios
 
@@ -188,7 +200,20 @@ El Módulo 4 trabaja manejo de errores y excepciones, archivos y persistencia de
    python Retos_M4/Semana14/Semana14.py
    ```
 
-5. Ejecutar el proyecto del Módulo 3:
+5. Configurar la API key de OpenWeather y ejecutar el reto de la semana 15. En PowerShell:
+
+   ```powershell
+   $env:OPENWEATHER_API_KEY="TU_API_KEY"
+   python Retos_M4/Semana15/Semana15.py
+   ```
+
+6. Ejecutar las pruebas de la semana 15:
+
+   ```bash
+   python -m unittest discover -s Retos_M4/Semana15/tests -v
+   ```
+
+7. Ejecutar el proyecto del Módulo 3:
 
    ```bash
    python Proyecto_Ucamp/Angel_Alfredo_Alpizar_Sanchez_proyectoM3.py
@@ -198,7 +223,7 @@ En algunos sistemas Linux puede ser necesario utilizar `python3` y `pip3`.
 
 ## Reflexión de aprendizaje
 
-Estos proyectos muestran mi progreso desde la creación de mi primer programa interactivo en Python hasta el desarrollo de soluciones con validaciones más completas, estructuras de control, colecciones, funciones, módulos, simulaciones, representaciones gráficas, manejo de excepciones y persistencia de datos en archivos.
+Estos proyectos muestran mi progreso desde la creación de mi primer programa interactivo en Python hasta el desarrollo de soluciones con validaciones más completas, estructuras de control, colecciones, funciones, módulos, simulaciones, representaciones gráficas, manejo de excepciones, persistencia de datos en archivos y consumo seguro de servicios web.
 
 El bootcamp me ha ayudado a comprender que programar no consiste únicamente en lograr que un programa funcione, sino también en dividir un problema en pasos más pequeños, anticipar entradas incorrectas, organizar el código de forma clara y documentar la solución para que otras personas puedan entenderla.
 
