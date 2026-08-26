@@ -8,7 +8,7 @@ Esta carpeta contiene los retos semanales correspondientes al **Módulo 4: Manej
 |---|---|---|
 | **13** | Programa para registrar alumnos y calificaciones, calcular promedios y evitar que entradas incorrectas detengan la ejecución mediante validaciones y manejo de excepciones. | [`Semana13.py`](Semana13.py) |
 | **14** | Programa que lee contactos desde un archivo, los muestra numerados, permite modificar nombre, teléfono y correo, y guarda los cambios sin detenerse ante opciones incorrectas. | [`Semana14/`](Semana14/) |
-| **15** | Consulta el clima actual mediante OpenWeather One Call API 3.0 usando latitud, longitud y una API key protegida mediante variable de entorno. | [`Semana15/`](Semana15/) |
+| **15** | Consulta el clima actual mediante OpenWeather Current Weather API usando latitud, longitud y una API key protegida mediante variable de entorno. | [`Semana15/`](Semana15/) |
 
 ## Ejecutar la semana 13
 
@@ -38,7 +38,9 @@ El archivo `contactos.txt` utiliza el formato `nombre|telefono|correo`. Al modif
 
 ## Ejecutar la semana 15
 
-La semana 15 consume la API de OpenWeather mediante una petición GET. La API key no se guarda en el repositorio; debe configurarse en la variable de entorno `OPENWEATHER_API_KEY`.
+La semana 15 consume **OpenWeather Current Weather API** mediante una petición GET. La consigna original menciona One Call API 3.0, pero ese producto requiere una suscripción de facturación separada; esta variante conserva el objetivo académico usando el endpoint oficial incluido en el acceso gratuito de OpenWeather.
+
+La API key no se guarda en el repositorio; debe configurarse en la variable de entorno `OPENWEATHER_API_KEY`.
 
 ### Windows PowerShell
 
