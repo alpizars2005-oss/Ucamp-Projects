@@ -1,6 +1,18 @@
 # Semana 15 — Consulta del clima con OpenWeather
 
-Este reto consume **OpenWeather One Call API 3.0** mediante una petición HTTP GET para consultar el clima actual de una localidad a partir de su latitud y longitud.
+Este reto consume la **Current Weather API** oficial de OpenWeather mediante una petición HTTP GET para consultar el clima actual de una localidad a partir de su latitud y longitud.
+
+## Por qué se usa Current Weather
+
+La consigna original de UCAMP menciona **One Call API 3.0**. Actualmente, OpenWeather requiere una suscripción de facturación separada para One Call 3.0. Para completar el objetivo académico sin solicitar una tarjeta ni asumir riesgo de cargos, esta implementación usa **Current Weather API**, que OpenWeather incluye en su acceso gratuito.
+
+El objetivo del ejercicio se conserva: usar una API key, construir una petición GET con coordenadas, recibir JSON y procesar los datos del clima.
+
+Endpoint utilizado:
+
+```text
+https://api.openweathermap.org/data/2.5/weather
+```
 
 ## Qué practica este reto
 
@@ -14,7 +26,7 @@ Este reto consume **OpenWeather One Call API 3.0** mediante una petición HTTP G
 
 ## Configurar la API key
 
-Primero crea una cuenta en OpenWeather y obtén una API key. OpenWeather puede requerir activar el producto correspondiente a **One Call API 3.0**, así que conviene revisar la documentación oficial antes de ejecutar el reto.
+Crea una cuenta en OpenWeather y obtén una API key. Para este reto no es necesario activar One Call API 3.0 ni registrar una tarjeta: la consulta utiliza Current Weather API.
 
 La clave **no debe escribirse dentro de `Semana15.py` ni subirse a GitHub**. El programa la lee desde la variable de entorno `OPENWEATHER_API_KEY`.
 
@@ -52,12 +64,13 @@ Puedes obtener coordenadas con el sitio sugerido por UCAMP o con cualquier servi
 
 El programa imprime:
 
+- Nombre de la localidad y país cuando OpenWeather los proporciona.
 - Condición del clima.
 - Temperatura en °C.
 - Sensación térmica en °C.
 - Humedad.
 - Velocidad del viento.
-- Zona horaria devuelta por OpenWeather.
+- Desfase horario respecto a UTC.
 
 ## Ejecutar las pruebas
 
@@ -72,3 +85,5 @@ python -m unittest discover -s Retos_M4/Semana15/tests -v
 ## Seguridad
 
 Nunca publiques una API key real en un commit, captura de pantalla o archivo compartido. Si una clave se expone accidentalmente, revócala desde tu cuenta de OpenWeather y genera una nueva.
+
+La implementación no almacena datos de pago ni realiza ninguna operación de suscripción; solamente consume el endpoint de Current Weather con la API key configurada por el usuario.
