@@ -1,15 +1,18 @@
 """Reto semanal UCAMP: consultor del clima con OpenWeather.
 
 Permite consultar el clima por ciudad o por coordenadas usando Current Weather
-API. La API key se solicita al ejecutar el programa y nunca se guarda en disco.
+API. La API key puede leerse desde OPENWEATHER_API_KEY o solicitarse durante la
+ejecución; nunca se guarda dentro del código.
 """
 
+import os
 from getpass import getpass
 
 import requests
 
 API_URL = "https://api.openweathermap.org/data/2.5/weather"
 TIMEOUT_SEGUNDOS = 10
+VARIABLE_API_KEY = "OPENWEATHER_API_KEY"
 
 
 class ClimaError(Exception):
@@ -166,7 +169,11 @@ def mostrar_clima(clima):
 
 
 def solicitar_api_key():
-    """Solicita la API key sin mostrarla en la terminal."""
+    """Usa la variable de entorno si existe; de lo contrario solicita la key."""
+    api_key_entorno = os.getenv(VARIABLE_API_KEY, "").strip()
+    if api_key_entorno:
+        return validar_api_key(api_key_entorno)
+
     return validar_api_key(getpass("Introduce tu API key de OpenWeather: "))
 
 
