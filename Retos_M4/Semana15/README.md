@@ -6,7 +6,7 @@ Reto semanal del **Módulo 4 de Fundamentos de Python (UCAMP)**. El programa con
 
 - Pregunta primero si el usuario tiene el nombre de la ciudad o las coordenadas.
 - Acepta ciudades con el formato `CIUDAD,SIGLAS_DEL_PAIS`, por ejemplo `Mexico City,MX`.
-- Solicita la API key de OpenWeather al ejecutar el programa.
+- Solicita la API key de OpenWeather al ejecutar el programa cuando no existe una variable de entorno configurada.
 - Valida ciudad, país, latitud, longitud y API key con mensajes que indican el dato incorrecto.
 - Usa `try/except` para manejar errores de entrada, red y respuesta de la API.
 - Informa cuando OpenWeather no encuentra la ciudad o ubicación.
@@ -22,7 +22,52 @@ Reto semanal del **Módulo 4 de Fundamentos de Python (UCAMP)**. El programa con
 - Una cuenta gratuita de **OpenWeather**.
 - Una **API key de OpenWeather** válida y activa.
 
-La API key se solicita durante la ejecución con `getpass`; **no debe escribirse dentro del código ni guardarse en GitHub**.
+## API key: dos formas de usarla
+
+### Opción 1 — escribirla al ejecutar
+
+Si `OPENWEATHER_API_KEY` no está configurada, el programa la solicita con `getpass`. La clave no se muestra mientras se escribe y solo vive durante esa ejecución.
+
+### Opción 2 — variable de entorno
+
+Para no escribir la API key en cada ejecución, puedes guardarla como variable de entorno llamada:
+
+```text
+OPENWEATHER_API_KEY
+```
+
+El programa primero intenta leer esta variable con `os.getenv()`; si existe, la utiliza automáticamente. Python soporta variables de entorno en Windows, Linux y macOS.
+
+En Windows puedes crearla desde:
+
+```text
+Configuración avanzada del sistema
+→ Variables de entorno
+→ Variables de usuario
+→ Nueva
+```
+
+Nombre:
+
+```text
+OPENWEATHER_API_KEY
+```
+
+Valor:
+
+```text
+TU_API_KEY_REAL
+```
+
+Después cierra y vuelve a abrir PowerShell para que la nueva terminal herede la variable.
+
+Para comprobar que existe sin mostrar su valor completo:
+
+```powershell
+if ($env:OPENWEATHER_API_KEY) { "API key configurada" } else { "API key no configurada" }
+```
+
+Nunca escribas la API key directamente dentro de `Semana15.py` ni la subas a GitHub.
 
 ## API utilizada
 
@@ -50,8 +95,6 @@ Desde la raíz del repositorio:
 python Retos_M4/Semana15/Semana15.py
 ```
 
-El programa pide la API key en la terminal usando `getpass`, por lo que la clave **no se muestra mientras se escribe y no se guarda en el repositorio**.
-
 Ejemplo de ciudad:
 
 ```text
@@ -75,9 +118,10 @@ python -m unittest discover -s Retos_M4/Semana15/tests -v
 
 ### Estado de verificación
 
-- **11/11 pruebas unitarias aprobadas**.
+- **12/12 pruebas unitarias aprobadas**.
 - Validación de ciudad y siglas del país: aprobada.
 - Validación de latitud y longitud: aprobada.
+- Reutilización de `OPENWEATHER_API_KEY`: aprobada.
 - Consulta HTTP simulada: aprobada.
 - Error `401` por API key inválida: aprobado.
 - Error `404` por ubicación inexistente: aprobado.
@@ -88,4 +132,4 @@ python -m unittest discover -s Retos_M4/Semana15/tests -v
 
 ## Seguridad
 
-Nunca escribas una API key real dentro del código ni la publiques en GitHub. El programa solo la mantiene en memoria durante la ejecución.
+Nunca escribas una API key real dentro del código ni la publiques en GitHub. El programa puede leerla desde una variable de entorno o mantenerla únicamente en memoria durante la ejecución.
