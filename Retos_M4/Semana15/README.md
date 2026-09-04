@@ -13,6 +13,17 @@ Reto semanal del **Módulo 4 de Fundamentos de Python (UCAMP)**. El programa con
 - Muestra un resultado del tipo: `El clima en Mexico City es muy nuboso.`
 - Añade temperatura, sensación térmica y humedad como información complementaria.
 
+## Requisitos para ejecutar
+
+- Python **3.9 o superior**.
+- `pip` para instalar dependencias.
+- Biblioteca `requests` instalada mediante el `requirements.txt` del repositorio.
+- Conexión a Internet para realizar consultas reales.
+- Una cuenta gratuita de **OpenWeather**.
+- Una **API key de OpenWeather** válida y activa.
+
+La API key se solicita durante la ejecución con `getpass`; **no debe escribirse dentro del código ni guardarse en GitHub**.
+
 ## API utilizada
 
 Se utiliza **OpenWeather Current Weather API**:
@@ -25,7 +36,7 @@ Esta API admite consultas por nombre de ciudad o por coordenadas y devuelve JSON
 
 ## Instalación
 
-Desde esta carpeta:
+Desde la raíz del repositorio:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -61,6 +72,19 @@ Las pruebas usan respuestas simuladas; no necesitan Internet ni una API key real
 ```bash
 python -m unittest discover -s Retos_M4/Semana15/tests -v
 ```
+
+### Estado de verificación
+
+- **11/11 pruebas unitarias aprobadas**.
+- Validación de ciudad y siglas del país: aprobada.
+- Validación de latitud y longitud: aprobada.
+- Consulta HTTP simulada: aprobada.
+- Error `401` por API key inválida: aprobado.
+- Error `404` por ubicación inexistente: aprobado.
+- Timeout de red: aprobado.
+- Extracción y presentación de datos del clima: aprobada.
+- Compilación de Python: aprobada.
+- GitHub Actions: aprobada en Python 3.11 y 3.13.
 
 ## Seguridad
 
