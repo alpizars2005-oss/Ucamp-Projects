@@ -78,3 +78,42 @@ Convertir el repositorio de ejercicios en un portafolio académico verificable s
 ## Riesgo y rollback
 
 Riesgo bajo: no se cambia la lógica de los retos. CI y archivos de higiene pueden revertirse de forma independiente.
+
+---
+
+# Cierre del Módulo 4 — reto OpenWeather y proyecto Pokédex — 2026-09-04
+
+## Objetivo
+
+Alinear el reto semanal de OpenWeather con la consigna final de UCAMP y añadir el proyecto integrador del Módulo 4 (Pokédex) sin perder el enfoque educativo del repositorio.
+
+## Commits planeados
+
+9. **Alinear reto de clima con la consigna final**
+   - Permitir consulta por ciudad o por latitud/longitud.
+   - Solicitar la API key durante la ejecución sin guardarla en el repositorio.
+   - Validar entradas y códigos HTTP con mensajes claros.
+   - Mantener pruebas unitarias sin llamadas reales a OpenWeather.
+
+10. **Añadir proyecto Pokédex del Módulo 4**
+   - Consumir PokéAPI con `requests`.
+   - Mostrar peso, tamaño, movimientos, habilidades, tipos, estadísticas e imagen frontal.
+   - Guardar la respuesta completa en JSON dentro de `pokedex/`.
+   - Incluir README, ejemplo y pruebas unitarias.
+
+11. **Integrar documentación y CI del Módulo 4**
+   - Actualizar README raíz y README del módulo.
+   - Declarar `requests` como dependencia.
+   - Ejecutar en CI las pruebas del reto de clima y de la Pokédex.
+
+## Verificación
+
+- Ejecutar las pruebas del reto de clima sin conexión ni API key real.
+- Ejecutar las pruebas de la Pokédex sin conexión.
+- Compilar los archivos Python modificados.
+- Confirmar que no se almacena ninguna API key.
+- Verificar que los README permiten explicar y ejecutar cada entrega.
+
+## Riesgo y rollback
+
+Riesgo bajo. Los cambios están limitados al cierre del Módulo 4, documentación y CI. El rollback consiste en revertir los commits 9–11 de forma independiente.
