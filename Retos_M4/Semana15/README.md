@@ -1,82 +1,62 @@
-# Semana 15 — Consulta del clima con OpenWeather
+# Semana 15 — Consultor del clima con OpenWeather
 
-Este reto consume la **Current Weather API** oficial de OpenWeather mediante una petición HTTP GET para consultar el clima actual de una localidad a partir de su latitud y longitud.
+Reto semanal del **Módulo 4 de Fundamentos de Python (UCAMP)**. El programa consulta el clima actual con OpenWeather y permite que el usuario elija entre buscar por **ciudad** o por **latitud y longitud**.
 
-## Por qué se usa Current Weather
+## Requisitos de la actividad cubiertos
 
-La consigna original de UCAMP menciona **One Call API 3.0**. Actualmente, OpenWeather requiere una suscripción de facturación separada para One Call 3.0. Para completar el objetivo académico sin solicitar una tarjeta ni asumir riesgo de cargos, esta implementación usa **Current Weather API**, que OpenWeather incluye en su acceso gratuito.
+- Pregunta primero si el usuario tiene el nombre de la ciudad o las coordenadas.
+- Acepta ciudades con el formato `CIUDAD,SIGLAS_DEL_PAIS`, por ejemplo `Mexico City,MX`.
+- Solicita la API key de OpenWeather al ejecutar el programa.
+- Valida ciudad, país, latitud, longitud y API key con mensajes que indican el dato incorrecto.
+- Usa `try/except` para manejar errores de entrada, red y respuesta de la API.
+- Informa cuando OpenWeather no encuentra la ciudad o ubicación.
+- Muestra un resultado del tipo: `El clima en Mexico City es muy nuboso.`
+- Añade temperatura, sensación térmica y humedad como información complementaria.
 
-El objetivo del ejercicio se conserva: usar una API key, construir una petición GET con coordenadas, recibir JSON y procesar los datos del clima.
+## API utilizada
 
-Endpoint utilizado:
+Se utiliza **OpenWeather Current Weather API**:
 
 ```text
 https://api.openweathermap.org/data/2.5/weather
 ```
 
-## Qué practica este reto
+Esta API admite consultas por nombre de ciudad o por coordenadas y devuelve JSON.
 
-- Consumo de una API REST mediante HTTP GET.
-- Construcción de una URL con parámetros de consulta.
-- Lectura e interpretación de respuestas JSON.
-- Validación de latitud y longitud.
-- Manejo de errores HTTP, de red y de datos inesperados.
-- Protección de credenciales mediante variables de entorno.
-- Pruebas unitarias con respuestas simuladas, sin consumir la API real.
+## Instalación
 
-## Configurar la API key
+Desde esta carpeta:
 
-Crea una cuenta en OpenWeather y obtén una API key. Para este reto no es necesario activar One Call API 3.0 ni registrar una tarjeta: la consulta utiliza Current Weather API.
+```bash
+python -m pip install -r requirements.txt
+```
 
-La clave **no debe escribirse dentro de `Semana15.py` ni subirse a GitHub**. El programa la lee desde la variable de entorno `OPENWEATHER_API_KEY`.
+## Ejecución
 
-### Windows PowerShell
+Desde la raíz del repositorio:
 
-```powershell
-$env:OPENWEATHER_API_KEY="TU_API_KEY"
+```bash
 python Retos_M4/Semana15/Semana15.py
 ```
 
-### Windows CMD
+El programa pide la API key en la terminal usando `getpass`, por lo que la clave **no se muestra mientras se escribe y no se guarda en el repositorio**.
 
-```cmd
-set OPENWEATHER_API_KEY=TU_API_KEY
-python Retos_M4\Semana15\Semana15.py
+Ejemplo de ciudad:
+
+```text
+Mexico City,MX
 ```
 
-### Linux / macOS
+Ejemplo de coordenadas de Ciudad de México:
 
-```bash
-export OPENWEATHER_API_KEY="TU_API_KEY"
-python3 Retos_M4/Semana15/Semana15.py
+```text
+Latitud: 19.4326
+Longitud: -99.1332
 ```
 
-## Coordenadas
+## Pruebas
 
-El programa solicita:
-
-- **Latitud:** valor entre `-90` y `90`.
-- **Longitud:** valor entre `-180` y `180`.
-
-Puedes obtener coordenadas con el sitio sugerido por UCAMP o con cualquier servicio de mapas confiable.
-
-## Datos mostrados
-
-El programa imprime:
-
-- Nombre de la localidad y país cuando OpenWeather los proporciona.
-- Condición del clima.
-- Temperatura en °C.
-- Sensación térmica en °C.
-- Humedad.
-- Velocidad del viento.
-- Desfase horario respecto a UTC.
-
-## Ejecutar las pruebas
-
-Las pruebas usan datos simulados y no necesitan conexión a Internet ni una API key real.
-
-Desde la raíz del repositorio:
+Las pruebas usan respuestas simuladas; no necesitan Internet ni una API key real.
 
 ```bash
 python -m unittest discover -s Retos_M4/Semana15/tests -v
@@ -84,6 +64,4 @@ python -m unittest discover -s Retos_M4/Semana15/tests -v
 
 ## Seguridad
 
-Nunca publiques una API key real en un commit, captura de pantalla o archivo compartido. Si una clave se expone accidentalmente, revócala desde tu cuenta de OpenWeather y genera una nueva.
-
-La implementación no almacena datos de pago ni realiza ninguna operación de suscripción; solamente consume el endpoint de Current Weather con la API key configurada por el usuario.
+Nunca escribas una API key real dentro del código ni la publiques en GitHub. El programa solo la mantiene en memoria durante la ejecución.
