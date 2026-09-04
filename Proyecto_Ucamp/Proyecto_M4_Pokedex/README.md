@@ -23,6 +23,17 @@ El usuario escribe el nombre de un Pokémon; el programa valida la respuesta HTT
 - Usa `try/except` para entradas, red, JSON y archivos.
 - Incluye pruebas unitarias que no dependen de Internet.
 
+## Requisitos para ejecutar
+
+- Python **3.9 o superior**.
+- `pip` para instalar dependencias.
+- Biblioteca `requests`.
+- Conexión a Internet para consultas reales a PokéAPI.
+- Permisos de escritura en la carpeta del proyecto para crear `pokedex/<pokemon>.json`.
+- Un navegador web es opcional; únicamente se utiliza para intentar abrir la imagen frontal.
+
+**PokéAPI no requiere API key**, por lo que este proyecto no necesita credenciales ni secretos.
+
 ## Ejemplo de resultado: Pikachu
 
 Imagen frontal devuelta por PokéAPI:
@@ -43,12 +54,16 @@ Información guardada correctamente en: pokedex/pikachu.json
 
 ## Instalación
 
-Requiere Python 3.9 o superior.
-
-Desde esta carpeta:
+Desde la raíz del repositorio:
 
 ```bash
 python -m pip install -r requirements.txt
+```
+
+También puede instalarse únicamente la dependencia de este proyecto desde su carpeta:
+
+```bash
+python -m pip install -r Proyecto_Ucamp/Proyecto_M4_Pokedex/requirements.txt
 ```
 
 La única biblioteca externa utilizada es `requests`. `json`, `pathlib`, `textwrap` y `webbrowser` forman parte de la biblioteca estándar de Python.
@@ -114,6 +129,17 @@ Las pruebas no realizan llamadas reales a PokéAPI:
 ```bash
 python -m unittest discover -s Proyecto_Ucamp/Proyecto_M4_Pokedex/tests -v
 ```
+
+### Estado de verificación
+
+- **6/6 pruebas unitarias aprobadas**.
+- Normalización y validación del nombre: aprobadas.
+- Consulta HTTP simulada: aprobada.
+- Manejo de Pokémon inexistente con `404`: aprobado.
+- Conversión de peso, altura, tipos y habilidades: aprobada.
+- Creación y lectura del archivo JSON: aprobada.
+- Compilación de Python: aprobada.
+- GitHub Actions: aprobada en Python 3.11 y 3.13.
 
 ## API utilizada
 
