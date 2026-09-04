@@ -1,7 +1,8 @@
+import os
 import pathlib
 import sys
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 import requests
 
@@ -47,6 +48,14 @@ class Semana15ValidacionesTests(unittest.TestCase):
         )
         self.assertEqual(parametros["lat"], 19.4326)
         self.assertEqual(parametros["lon"], -99.1332)
+
+    def test_solicitar_api_key_reutiliza_variable_de_entorno(self):
+        with patch.dict(
+            os.environ, {semana15.VARIABLE_API_KEY: "clave-entorno"}, clear=False
+        ):
+            with patch.object(semana15, "getpass") as getpass_falso:
+                self.assertEqual(semana15.solicitar_api_key(), "clave-entorno")
+                getpass_falso.assert_not_called()
 
 
 class Semana15ApiTests(unittest.TestCase):
