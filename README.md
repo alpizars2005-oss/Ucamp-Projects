@@ -15,7 +15,15 @@ Ucamp-Projects/
 ├── Proyecto_Ucamp/
 │   ├── Calculadora_de_IMC.py
 │   ├── Angel_Alfredo_Alpizar_Sanchez_proyectoM2.py
-│   └── Angel_Alfredo_Alpizar_Sanchez_proyectoM3.py
+│   ├── Angel_Alfredo_Alpizar_Sanchez_proyectoM3.py
+│   └── Proyecto_M4_Pokedex/
+│       ├── pokedex.py
+│       ├── README.md
+│       ├── requirements.txt
+│       ├── pokedex/
+│       │   └── pikachu_ejemplo.json
+│       └── tests/
+│           └── test_pokedex.py
 ├── Retos_M2/
 │   ├── Semana5.py
 │   ├── Semana6.py
@@ -40,6 +48,10 @@ Ucamp-Projects/
 │       ├── README.md
 │       └── tests/
 │           └── test_semana15.py
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── AGENTS.md
 ├── PLAN.md
 ├── requirements.txt
 └── README.md
@@ -110,6 +122,29 @@ Conceptos practicados:
 
 Este proyecto me permitió comprender cómo dividir un problema en funciones con responsabilidades específicas. También observé que una gran cantidad de decisiones aleatorias sencillas puede producir una distribución concentrada alrededor de los valores centrales. Aprendí a representar los resultados de un programa mediante Matplotlib y a utilizar módulos de Python para ampliar la funcionalidad de mis proyectos.
 
+### Módulo 4 — Pokédex con PokéAPI
+
+**Carpeta:** [`Proyecto_Ucamp/Proyecto_M4_Pokedex/`](Proyecto_Ucamp/Proyecto_M4_Pokedex/)
+
+El proyecto final del Módulo 4 construye una Pokédex desde consola. El usuario introduce el nombre de un Pokémon y el programa consume PokéAPI mediante `requests`, valida los códigos HTTP y muestra peso, tamaño, movimientos, habilidades, tipos, estadísticas e imagen frontal.
+
+Además, crea la carpeta `pokedex/` y guarda en JSON la respuesta completa obtenida desde la API junto con el enlace de la imagen frontal.
+
+Conceptos practicados:
+
+- Consumo de APIs REST con `requests`
+- Códigos de estado HTTP
+- Respuestas JSON
+- `try/except`
+- Manejo de timeouts y errores de conexión
+- Listas y diccionarios
+- Creación de carpetas con `pathlib`
+- Lectura y escritura de archivos JSON
+- Apertura de recursos web
+- Pruebas unitarias con respuestas simuladas
+
+La documentación específica, el ejemplo y la reflexión del proyecto están en [`Proyecto_M4_Pokedex/README.md`](Proyecto_Ucamp/Proyecto_M4_Pokedex/README.md).
+
 ## Retos semanales del Módulo 2
 
 | Semana | Ejercicio | Conceptos principales | Archivo |
@@ -138,13 +173,15 @@ El Módulo 4 trabaja manejo de errores y excepciones, archivos, persistencia de 
 |---|---|---|---|
 | **13** | Registra alumnos y calificaciones mediante un menú, calcula promedios y valida entradas incorrectas sin detener la ejecución. | `try/except`, `ValueError`, validación, listas, diccionarios, funciones y ciclos | [`Semana13.py`](Retos_M4/Semana13.py) |
 | **14** | Lee contactos desde un archivo, los muestra numerados, permite modificar nombre, teléfono y correo, y guarda los cambios. | Lectura y escritura de archivos, `Path`, validación, excepciones, listas, diccionarios y persistencia | [`Semana14/`](Retos_M4/Semana14/) |
-| **15** | Consulta el clima actual mediante OpenWeather Current Weather API usando coordenadas y una API key protegida, sin requerir una suscripción de facturación de One Call. | HTTP GET, APIs REST, JSON, variables de entorno, validación, manejo de errores y pruebas unitarias | [`Semana15/`](Retos_M4/Semana15/) |
+| **15** | Consulta el clima actual mediante OpenWeather por ciudad o por coordenadas; solicita la API key al ejecutar y muestra un mensaje descriptivo del clima. | HTTP GET, `requests`, APIs REST, JSON, validación, status codes, `getpass`, manejo de errores y pruebas unitarias | [`Semana15/`](Retos_M4/Semana15/) |
 
 ## Tecnologías y herramientas
 
 - Python
 - Matplotlib
+- Requests
 - OpenWeather API
+- PokéAPI
 - Git
 - GitHub
 - Visual Studio Code
@@ -167,8 +204,9 @@ El Módulo 4 trabaja manejo de errores y excepciones, archivos, persistencia de 
 - Manejo de errores y excepciones con `try/except`
 - Lectura, escritura y actualización de archivos
 - Peticiones HTTP GET y consumo de APIs REST
+- Validación de códigos de estado HTTP
 - Lectura de respuestas JSON
-- Manejo seguro de API keys mediante variables de entorno
+- Manejo seguro de API keys
 - Pruebas unitarias con `unittest`
 - Organización y documentación del código
 - Control de versiones y administración de repositorios
@@ -182,10 +220,10 @@ El Módulo 4 trabaja manejo de errores y excepciones, archivos, persistencia de 
    cd Ucamp-Projects
    ```
 
-2. Instalar la dependencia necesaria para los ejercicios con gráficas:
+2. Instalar las dependencias:
 
    ```bash
-   pip install -r requirements.txt
+   python -m pip install -r requirements.txt
    ```
 
 3. Ejecutar el reto de la semana 13:
@@ -200,14 +238,13 @@ El Módulo 4 trabaja manejo de errores y excepciones, archivos, persistencia de 
    python Retos_M4/Semana14/Semana14.py
    ```
 
-5. Configurar la API key de OpenWeather y ejecutar el reto de la semana 15. En PowerShell:
+5. Ejecutar el reto de la semana 15:
 
-   ```powershell
-   $env:OPENWEATHER_API_KEY="TU_API_KEY"
+   ```bash
    python Retos_M4/Semana15/Semana15.py
    ```
 
-   La semana 15 usa **Current Weather API**, incluida en el acceso gratuito de OpenWeather, para evitar requerir datos de pago para el ejercicio académico.
+   El programa solicita la API key de OpenWeather durante la ejecución y no la guarda en el repositorio.
 
 6. Ejecutar las pruebas de la semana 15:
 
@@ -215,7 +252,19 @@ El Módulo 4 trabaja manejo de errores y excepciones, archivos, persistencia de 
    python -m unittest discover -s Retos_M4/Semana15/tests -v
    ```
 
-7. Ejecutar el proyecto del Módulo 3:
+7. Ejecutar la Pokédex del Módulo 4:
+
+   ```bash
+   python Proyecto_Ucamp/Proyecto_M4_Pokedex/pokedex.py
+   ```
+
+8. Ejecutar las pruebas de la Pokédex:
+
+   ```bash
+   python -m unittest discover -s Proyecto_Ucamp/Proyecto_M4_Pokedex/tests -v
+   ```
+
+9. Ejecutar el proyecto del Módulo 3:
 
    ```bash
    python Proyecto_Ucamp/Angel_Alfredo_Alpizar_Sanchez_proyectoM3.py
@@ -223,11 +272,17 @@ El Módulo 4 trabaja manejo de errores y excepciones, archivos, persistencia de 
 
 En algunos sistemas Linux puede ser necesario utilizar `python3` y `pip3`.
 
+## Verificación automática
+
+GitHub Actions verifica las versiones de Python declaradas en el workflow, instala dependencias, compila los ejercicios y ejecuta las pruebas unitarias que no requieren acceso real a las APIs.
+
 ## Reflexión de aprendizaje
 
 Estos proyectos muestran mi progreso desde la creación de mi primer programa interactivo en Python hasta el desarrollo de soluciones con validaciones más completas, estructuras de control, colecciones, funciones, módulos, simulaciones, representaciones gráficas, manejo de excepciones, persistencia de datos en archivos y consumo seguro de servicios web.
 
 El bootcamp me ha ayudado a comprender que programar no consiste únicamente en lograr que un programa funcione, sino también en dividir un problema en pasos más pequeños, anticipar entradas incorrectas, organizar el código de forma clara y documentar la solución para que otras personas puedan entenderla.
+
+El cierre del Módulo 4 añadió una práctica importante: trabajar con servicios externos sin depender de ellos durante las pruebas. Simular respuestas de OpenWeather y PokéAPI permite comprobar validaciones, errores y persistencia de archivos de manera repetible.
 
 Continuaré actualizando este repositorio conforme complete nuevos módulos, retos y proyectos.
 
