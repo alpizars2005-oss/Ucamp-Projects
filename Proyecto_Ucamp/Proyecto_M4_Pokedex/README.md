@@ -4,6 +4,20 @@ Proyecto final del **Módulo 4: Manejo de Archivos, Excepciones y Consumo de API
 
 El usuario escribe el nombre de un Pokémon; el programa valida la respuesta HTTP, muestra la información solicitada y guarda la respuesta completa en un archivo JSON dentro de la carpeta `pokedex/`.
 
+## Índice
+
+1. [Requisitos de la actividad cubiertos](#requisitos-de-la-actividad-cubiertos)
+2. [Correspondencia con la rúbrica](#correspondencia-con-la-rúbrica)
+3. [Requisitos para ejecutar](#requisitos-para-ejecutar)
+4. [Ejemplo de resultado](#ejemplo-de-resultado-squirtle)
+5. [Instalación](#instalación)
+6. [Ejecución](#ejecución)
+7. [Estructura del proyecto](#estructura-del-proyecto)
+8. [Cómo lo hice](#cómo-lo-hice)
+9. [Qué aprendí](#qué-aprendí-en-este-módulo)
+10. [Pruebas](#pruebas)
+11. [API utilizada](#api-utilizada)
+
 ## Requisitos de la actividad cubiertos
 
 - Consume `https://pokeapi.co/api/v2/pokemon/{nombre}` con `requests`.
@@ -22,6 +36,19 @@ El usuario escribe el nombre de un Pokémon; el programa valida la respuesta HTT
 - Guarda en JSON la respuesta completa recibida de PokéAPI y el enlace frontal.
 - Usa `try/except` para entradas, red, JSON y archivos.
 - Incluye pruebas unitarias que no dependen de Internet.
+- El código incorpora comentarios y docstrings útiles para explicar el flujo del programa.
+
+## Correspondencia con la rúbrica
+
+| Criterio | Evidencia en el proyecto |
+|---|---|
+| **Título e índice** | Este README incluye un título principal y un índice navegable. |
+| **Consumo exitoso de PokéAPI** | `consultar_pokemon()` realiza una petición GET con `requests` y procesa la respuesta JSON. |
+| **Validación de status codes** | Se manejan explícitamente `404`, errores `5xx` y otros códigos diferentes de `200`. |
+| **Despliegue correcto de la información** | Se muestran peso, tamaño, tipos, habilidades, movimientos, estadísticas y el enlace frontal; además se intenta abrir el sprite en el navegador. |
+| **Guardar adecuadamente el archivo .json** | `guardar_pokemon()` crea `pokedex/` y guarda la respuesta completa con `json.dump()`. |
+| **Repositorio de GitHub** | El proyecto incluye código, README, dependencias, ejemplo JSON, pruebas y reflexión de aprendizaje. |
+| **Código comentado correctamente** | El programa incluye comentarios educativos sobre HTTP, conversiones de unidades, JSON, imágenes y persistencia, además de docstrings por función. |
 
 ## Requisitos para ejecutar
 
@@ -34,22 +61,45 @@ El usuario escribe el nombre de un Pokémon; el programa valida la respuesta HTT
 
 **PokéAPI no requiere API key**, por lo que este proyecto no necesita credenciales ni secretos.
 
-## Ejemplo de resultado: Pikachu
+## Ejemplo de resultado: Squirtle
+
+Durante la verificación manual se realizó una búsqueda real de `squirtle`. El programa obtuvo correctamente el Pokémon **#7 Squirtle**, mostró sus datos, abrió la imagen frontal y creó localmente `pokedex/squirtle.json`.
 
 Imagen frontal devuelta por PokéAPI:
 
-![Pikachu](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png)
+![Squirtle](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png)
 
-Ejemplo de salida:
+Fragmento de la salida real verificada:
 
 ```text
-POKÉDEX | #25 Pikachu
-Peso: 6.0 kg
-Tamaño: 0.4 m
-Tipos: electric
-Habilidades: static, lightning-rod
-Imagen frontal: https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png
-Información guardada correctamente en: pokedex/pikachu.json
+POKÉDEX | #7 Squirtle
+Peso: 9.0 kg
+Tamaño: 0.5 m
+Tipos: water
+Habilidades: torrent, rain-dish
+
+Estadísticas base:
+  - hp: 44
+  - attack: 48
+  - defense: 65
+  - special-attack: 50
+  - special-defense: 64
+  - speed: 43
+
+Movimientos (105):
+...
+
+Imagen frontal:
+https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png
+
+Se abrió la imagen frontal en tu navegador.
+Información guardada correctamente en: .../pokedex/squirtle.json
+```
+
+También se probó un nombre inexistente (`Turtle`) y el programa respondió correctamente:
+
+```text
+Error: No se encontró ningún Pokémon llamado 'turtle'.
 ```
 
 ## Instalación
@@ -79,16 +129,16 @@ python Proyecto_Ucamp/Proyecto_M4_Pokedex/pokedex.py
 Después escribe, por ejemplo:
 
 ```text
-pikachu
+squirtle
 ```
 
 La ejecución genera:
 
 ```text
-Proyecto_Ucamp/Proyecto_M4_Pokedex/pokedex/pikachu.json
+Proyecto_Ucamp/Proyecto_M4_Pokedex/pokedex/squirtle.json
 ```
 
-## Estructura
+## Estructura del proyecto
 
 ```text
 Proyecto_M4_Pokedex/
@@ -103,6 +153,8 @@ Proyecto_M4_Pokedex/
 
 El archivo `pokedex/pikachu_ejemplo.json` sirve como muestra versionada de la estructura. Al ejecutar una búsqueda real, el programa crea `pokedex/<nombre>.json` con la respuesta completa actual de PokéAPI y el enlace frontal.
 
+> La ejecución manual ya generó `squirtle.json` en el equipo local. Ese archivo no se reconstruye artificialmente en el repositorio: sólo debe versionarse a partir del archivo real generado por el programa.
+
 ## ¿Cómo lo hice?
 
 1. Solicité el nombre del Pokémon y normalicé la entrada.
@@ -115,12 +167,15 @@ El archivo `pokedex/pikachu_ejemplo.json` sirve como muestra versionada de la es
 8. Creé la carpeta `pokedex/` cuando no existía.
 9. Guardé toda la respuesta de la API en un archivo `.json`.
 10. Añadí manejo de excepciones y pruebas unitarias con respuestas simuladas.
+11. Comenté las partes importantes del código para explicar decisiones y conversiones sin llenar cada línea de comentarios redundantes.
 
 ## ¿Qué aprendí en este módulo?
 
 Con este proyecto practiqué cómo consumir una API web desde Python, interpretar respuestas JSON y manejar diferentes códigos de estado HTTP. También reforcé el uso de listas, diccionarios, funciones y excepciones con `try/except`.
 
 La parte de persistencia me permitió practicar la creación de carpetas y archivos desde Python y comprender cómo guardar información estructurada en JSON. Las pruebas simuladas también me ayudaron a separar la lógica del programa de la disponibilidad de una API externa.
+
+La verificación manual me permitió comprobar la diferencia entre una respuesta válida, como `squirtle`, y un recurso inexistente, como `turtle`, y confirmar que el programa crea correctamente el archivo JSON y abre el recurso gráfico proporcionado por la API.
 
 ## Pruebas
 
@@ -139,7 +194,9 @@ python -m unittest discover -s Proyecto_Ucamp/Proyecto_M4_Pokedex/tests -v
 - Conversión de peso, altura, tipos y habilidades: aprobada.
 - Creación y lectura del archivo JSON: aprobada.
 - Compilación de Python: aprobada.
-- GitHub Actions: aprobada en Python 3.11 y 3.13.
+- Prueba manual con `squirtle`: aprobada.
+- Prueba manual con recurso inexistente: aprobada.
+- GitHub Actions: aprobada en Python 3.11 y 3.13 antes del último ajuste documental; el workflow se vuelve a ejecutar con cada actualización del PR.
 
 ## API utilizada
 
