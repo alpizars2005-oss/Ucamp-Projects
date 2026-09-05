@@ -7,8 +7,13 @@ from pathlib import Path
 
 import requests
 
+# Endpoint base de PokéAPI. El nombre normalizado se inserta al final de la URL.
 API_URL = "https://pokeapi.co/api/v2/pokemon/{}"
+
+# El timeout evita que el programa espere indefinidamente si la API no responde.
 TIMEOUT_SEGUNDOS = 10
+
+# Los archivos JSON generados se almacenan en una carpeta junto al programa.
 CARPETA_POKEDEX = Path(__file__).resolve().parent / "pokedex"
 
 
@@ -18,6 +23,7 @@ class PokemonNoEncontradoError(Exception):
 
 def normalizar_nombre(nombre):
     """Limpia y valida el nombre escrito por el usuario."""
+    # PokéAPI utiliza nombres en minúsculas y guiones para Pokémon con espacios.
     nombre = nombre.strip().lower().replace(" ", "-")
 
     if not nombre:
@@ -35,6 +41,7 @@ def consultar_pokemon(nombre, get_func=requests.get):
     url = API_URL.format(nombre)
 
     try:
+        # Se realiza una petición GET y se limita el tiempo máximo de espera.
         respuesta = get_func(url, timeout=TIMEOUT_SEGUNDOS)
     except requests.exceptions.Timeout as error:
         raise ConnectionError("PokéAPI tardó demasiado tiempo en responder.") from error
@@ -45,6 +52,7 @@ def consultar_pokemon(nombre, get_func=requests.get):
     except requests.exceptions.RequestException as error:
         raise ConnectionError(f"Ocurrió un error al consultar PokéAPI: {error}") from error
 
+    # Primero se validan los status codes antes de intentar procesar el JSON.
     if respuesta.status_code == 404:
         raise PokemonNoEncontradoError(
             f"No se encontró ningún Pokémon llamado '{nombre}'."
@@ -61,6 +69,7 @@ def consultar_pokemon(nombre, get_func=requests.get):
         )
 
     try:
+        # requests convierte la respuesta JSON en listas y diccionarios de Python.
         return respuesta.json()
     except ValueError as error:
         raise ConnectionError("PokéAPI devolvió una respuesta JSON inválida.") from error
@@ -72,7 +81,9 @@ def extraer_resumen(datos):
         return {
             "id": datos["id"],
             "nombre": datos["name"].replace("-", " ").title(),
+            # PokéAPI expresa el peso en hectogramos; dividir entre 10 da kilogramos.
             "peso_kg": datos["weight"] / 10,
+            # PokéAPI expresa la altura en decímetros; dividir entre 10 da metros.
             "altura_m": datos["height"] / 10,
             "tipos": [elemento["type"]["name"] for elemento in datos["types"]],
             "habilidades": [
@@ -103,6 +114,7 @@ def mostrar_resumen(resumen):
     for nombre, valor in resumen["estadisticas"].items():
         print(f"  - {nombre}: {valor}")
 
+    # textwrap mantiene legible una lista larga de movimientos en la consola.
     movimientos = ", ".join(resumen["movimientos"])
     print(f"\nMovimientos ({len(resumen['movimientos'])}):")
     print(textwrap.fill(movimientos, width=70, subsequent_indent="  "))
@@ -118,6 +130,7 @@ def mostrar_imagen(url):
         return
 
     try:
+        # El enlace del sprite se abre en el navegador predeterminado del usuario.
         abierto = webbrowser.open(url)
         if abierto:
             print("Se abrió la imagen frontal en tu navegador.")
@@ -135,17 +148,21 @@ def mostrar_imagen(url):
 
 def guardar_pokemon(datos):
     """Guarda toda la respuesta y el enlace frontal dentro de /pokedex."""
+    # La carpeta se crea automáticamente si todavía no existe.
     CARPETA_POKEDEX.mkdir(exist_ok=True)
 
     nombre = datos.get("name", "pokemon")
     ruta = CARPETA_POKEDEX / f"{nombre}.json"
 
+    # Se guarda la respuesta completa de la API y también el enlace frontal
+    # de forma explícita para cumplir con el requisito del proyecto.
     contenido = {
         "imagen_frontal": datos.get("sprites", {}).get("front_default"),
         "pokemon": datos,
     }
 
     try:
+        # ensure_ascii=False conserva caracteres Unicode y el indent facilita lectura.
         with ruta.open("w", encoding="utf-8") as archivo:
             json.dump(contenido, archivo, indent=4, ensure_ascii=False)
     except OSError as error:
@@ -161,6 +178,8 @@ def main():
 
     try:
         nombre = normalizar_nombre(input("Escribe el nombre de un Pokémon: "))
+
+        # Flujo principal: consultar, procesar, mostrar y finalmente persistir.
         datos = consultar_pokemon(nombre)
         resumen = extraer_resumen(datos)
 
