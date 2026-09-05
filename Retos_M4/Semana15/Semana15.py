@@ -1,175 +1,217 @@
-"""Reto semanal: consultar el clima con OpenWeather Current Weather API.
+"""Reto semanal UCAMP: consultor del clima con OpenWeather.
 
-La API key se obtiene de la variable de entorno ``OPENWEATHER_API_KEY`` para
-no guardar credenciales dentro del código ni del repositorio.
+Permite consultar el clima por ciudad o por coordenadas usando Current Weather
+API. La API key puede leerse desde OPENWEATHER_API_KEY o solicitarse durante la
+ejecución; nunca se guarda dentro del código.
 """
 
-import json
 import os
-from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode
-from urllib.request import urlopen
+from getpass import getpass
+
+import requests
 
 API_URL = "https://api.openweathermap.org/data/2.5/weather"
 TIMEOUT_SEGUNDOS = 10
+VARIABLE_API_KEY = "OPENWEATHER_API_KEY"
 
 
 class ClimaError(Exception):
-    """Error controlado al consultar o interpretar datos del clima."""
+    """Error controlado relacionado con la consulta del clima."""
 
 
-def obtener_api_key():
-    """Obtiene la API key desde una variable de entorno."""
-    api_key = os.getenv("OPENWEATHER_API_KEY", "").strip()
+def validar_ciudad(valor):
+    """Valida CIUDAD,SIGLAS_DEL_PAIS y devuelve ciudad y país."""
+    if not isinstance(valor, str):
+        raise ValueError("La ciudad debe escribirse como texto.")
 
-    if not api_key:
-        raise ClimaError(
-            "No se encontró la variable OPENWEATHER_API_KEY. "
-            "Configúrala antes de ejecutar el programa."
+    partes = [parte.strip() for parte in valor.split(",")]
+
+    if len(partes) != 2:
+        raise ValueError(
+            "La ciudad debe tener el formato CIUDAD,SIGLAS_DEL_PAIS, "
+            "por ejemplo: Mexico City,MX."
         )
 
-    return api_key
+    ciudad, pais = partes
+
+    if not ciudad:
+        raise ValueError("El nombre de la ciudad está vacío.")
+
+    if not pais:
+        raise ValueError("Las siglas del país están vacías.")
+
+    if len(pais) != 2 or not pais.isalpha():
+        raise ValueError(
+            "Las siglas del país deben contener exactamente 2 letras, por ejemplo: MX."
+        )
+
+    return ciudad, pais.upper()
 
 
-def validar_coordenadas(latitud, longitud):
-    """Valida que las coordenadas estén dentro de los rangos permitidos."""
+def validar_latitud(valor):
+    """Convierte y valida una latitud entre -90 y 90."""
+    try:
+        latitud = float(valor)
+    except (TypeError, ValueError) as error:
+        raise ValueError("La latitud debe ser un número.") from error
+
     if not -90 <= latitud <= 90:
         raise ValueError("La latitud debe estar entre -90 y 90.")
+
+    return latitud
+
+
+def validar_longitud(valor):
+    """Convierte y valida una longitud entre -180 y 180."""
+    try:
+        longitud = float(valor)
+    except (TypeError, ValueError) as error:
+        raise ValueError("La longitud debe ser un número.") from error
 
     if not -180 <= longitud <= 180:
         raise ValueError("La longitud debe estar entre -180 y 180.")
 
+    return longitud
 
-def construir_url(latitud, longitud, api_key):
-    """Construye la URL GET para OpenWeather Current Weather API."""
-    validar_coordenadas(latitud, longitud)
 
-    if not api_key or not api_key.strip():
-        raise ValueError("La API key no puede estar vacía.")
+def validar_api_key(api_key):
+    """Comprueba que se haya proporcionado una API key."""
+    api_key = api_key.strip()
+    if not api_key:
+        raise ValueError("La API key de OpenWeather no puede estar vacía.")
+    return api_key
 
-    parametros = {
-        "lat": latitud,
-        "lon": longitud,
-        "appid": api_key.strip(),
+
+def parametros_por_ciudad(ciudad, pais, api_key):
+    """Construye los parámetros para buscar por ciudad."""
+    return {
+        "q": f"{ciudad},{pais}",
+        "appid": validar_api_key(api_key),
         "units": "metric",
         "lang": "es",
     }
 
-    return f"{API_URL}?{urlencode(parametros)}"
+
+def parametros_por_coordenadas(latitud, longitud, api_key):
+    """Construye los parámetros para buscar por coordenadas."""
+    return {
+        "lat": validar_latitud(latitud),
+        "lon": validar_longitud(longitud),
+        "appid": validar_api_key(api_key),
+        "units": "metric",
+        "lang": "es",
+    }
 
 
-def formatear_desfase_utc(segundos):
-    """Convierte un desfase horario en segundos a un texto UTC±HH:MM."""
+def consultar_clima(parametros, get_func=requests.get):
+    """Consulta OpenWeather y devuelve la respuesta JSON validada."""
     try:
-        segundos = int(segundos)
-    except (TypeError, ValueError) as error:
-        raise ClimaError("OpenWeather devolvió un desfase horario inválido.") from error
+        respuesta = get_func(API_URL, params=parametros, timeout=TIMEOUT_SEGUNDOS)
+    except requests.exceptions.Timeout as error:
+        raise ClimaError("La consulta tardó demasiado tiempo en responder.") from error
+    except requests.exceptions.ConnectionError as error:
+        raise ClimaError(
+            "No fue posible conectarse a OpenWeather. Revisa tu conexión a Internet."
+        ) from error
+    except requests.exceptions.RequestException as error:
+        raise ClimaError(f"Ocurrió un error al consultar OpenWeather: {error}") from error
 
-    signo = "+" if segundos >= 0 else "-"
-    segundos = abs(segundos)
-    horas, resto = divmod(segundos, 3600)
-    minutos = resto // 60
-    return f"UTC{signo}{horas:02d}:{minutos:02d}"
+    if respuesta.status_code == 401:
+        raise ClimaError("La API key de OpenWeather es incorrecta o todavía no está activa.")
 
+    if respuesta.status_code == 404:
+        raise ClimaError("OpenWeather no encontró la ciudad o ubicación indicada.")
 
-def interpretar_respuesta(datos):
-    """Extrae los datos principales del clima desde la respuesta JSON."""
+    if respuesta.status_code == 429:
+        raise ClimaError(
+            "Se alcanzó el límite de consultas de OpenWeather. Intenta de nuevo más tarde."
+        )
+
+    if respuesta.status_code != 200:
+        try:
+            detalle = respuesta.json().get("message", "Error desconocido")
+        except (ValueError, AttributeError):
+            detalle = "Error desconocido"
+        raise ClimaError(
+            f"OpenWeather respondió con el código HTTP {respuesta.status_code}: {detalle}."
+        )
+
     try:
-        principal = datos["main"]
-        viento = datos["wind"]
-        descripcion = datos["weather"][0]["description"]
-        sistema = datos.get("sys") or {}
+        return respuesta.json()
+    except ValueError as error:
+        raise ClimaError("OpenWeather devolvió una respuesta JSON inválida.") from error
 
+
+def extraer_clima(datos):
+    """Extrae los datos necesarios para mostrarlos al usuario."""
+    try:
         return {
-            "localidad": str(datos.get("name") or "No disponible"),
-            "pais": str(sistema.get("country") or "No disponible"),
-            "temperatura": float(principal["temp"]),
-            "sensacion": float(principal["feels_like"]),
-            "humedad": int(principal["humidity"]),
-            "viento": float(viento["speed"]),
-            "descripcion": str(descripcion).capitalize(),
-            "zona_horaria": formatear_desfase_utc(datos.get("timezone", 0)),
+            "lugar": datos.get("name") or "la ubicación indicada",
+            "descripcion": str(datos["weather"][0]["description"]),
+            "temperatura": float(datos["main"]["temp"]),
+            "sensacion": float(datos["main"]["feels_like"]),
+            "humedad": int(datos["main"]["humidity"]),
         }
     except (KeyError, IndexError, TypeError, ValueError) as error:
         raise ClimaError(
-            "La respuesta de OpenWeather no contiene los datos esperados."
+            "La API respondió, pero faltan datos del clima esperados."
         ) from error
 
 
-def consultar_clima(latitud, longitud, api_key, urlopen_func=urlopen):
-    """Consulta OpenWeather y devuelve los datos principales del clima."""
-    url = construir_url(latitud, longitud, api_key)
-
-    try:
-        with urlopen_func(url, timeout=TIMEOUT_SEGUNDOS) as respuesta:
-            contenido = respuesta.read().decode("utf-8")
-            datos = json.loads(contenido)
-
-    except HTTPError as error:
-        if error.code == 401:
-            mensaje = "OpenWeather rechazó la API key. Verifica que sea válida."
-        elif error.code == 429:
-            mensaje = "Se alcanzó el límite de solicitudes de OpenWeather."
-        else:
-            mensaje = f"OpenWeather respondió con el error HTTP {error.code}."
-        raise ClimaError(mensaje) from error
-
-    except URLError as error:
-        raise ClimaError(
-            "No fue posible conectarse con OpenWeather. Revisa tu conexión."
-        ) from error
-
-    except (UnicodeDecodeError, json.JSONDecodeError) as error:
-        raise ClimaError("OpenWeather devolvió una respuesta inválida.") from error
-
-    return interpretar_respuesta(datos)
-
-
-def solicitar_coordenada(nombre, minimo, maximo):
-    """Solicita una coordenada numérica hasta recibir un valor válido."""
-    while True:
-        try:
-            valor = float(input(f"Escribe la {nombre} ({minimo} a {maximo}): "))
-
-            if minimo <= valor <= maximo:
-                return valor
-
-            print(f"La {nombre} debe estar entre {minimo} y {maximo}.")
-
-        except ValueError:
-            print("Entrada inválida. Escribe un número, por ejemplo: 19.4326")
-
-
-def mostrar_clima(clima, latitud, longitud):
-    """Muestra en consola los datos obtenidos de OpenWeather."""
-    print("\n" + "=" * 52)
-    print("CLIMA ACTUAL")
-    print("=" * 52)
-    print(f"Localidad: {clima['localidad']} ({clima['pais']})")
-    print(f"Coordenadas: {latitud:.4f}, {longitud:.4f}")
-    print(f"Condición: {clima['descripcion']}")
+def mostrar_clima(clima):
+    """Muestra el mensaje solicitado y datos adicionales del clima."""
+    print("\n" + "=" * 58)
+    print(f"El clima en {clima['lugar']} es {clima['descripcion']}.")
     print(f"Temperatura: {clima['temperatura']:.1f} °C")
     print(f"Sensación térmica: {clima['sensacion']:.1f} °C")
-    print(f"Humedad: {clima['humedad']} %")
-    print(f"Velocidad del viento: {clima['viento']:.1f} m/s")
-    print(f"Zona horaria: {clima['zona_horaria']}")
+    print(f"Humedad: {clima['humedad']}%")
+    print("=" * 58)
 
 
-def ejecutar_programa():
-    """Controla la ejecución interactiva del reto de la semana 15."""
-    print("Consulta del clima con OpenWeather Current Weather API")
-    print("Ingresa las coordenadas de la localidad que deseas consultar.\n")
+def solicitar_api_key():
+    """Usa la variable de entorno si existe; de lo contrario solicita la key."""
+    api_key_entorno = os.getenv(VARIABLE_API_KEY, "").strip()
+    if api_key_entorno:
+        return validar_api_key(api_key_entorno)
 
-    latitud = solicitar_coordenada("latitud", -90, 90)
-    longitud = solicitar_coordenada("longitud", -180, 180)
+    return validar_api_key(getpass("Introduce tu API key de OpenWeather: "))
+
+
+def main():
+    """Controla la interacción principal del reto semanal."""
+    print("\nCONSULTOR DEL CLIMA — UCAMP")
+    print("1. Tengo el nombre de la ciudad")
+    print("2. Tengo la latitud y la longitud")
 
     try:
-        api_key = obtener_api_key()
-        clima = consultar_clima(latitud, longitud, api_key)
-        mostrar_clima(clima, latitud, longitud)
-    except ClimaError as error:
-        print(f"\nNo se pudo obtener el clima: {error}")
+        opcion = input(
+            "\n¿Tienes las coordenadas o el nombre de la ciudad? [1/2]: "
+        ).strip()
+        api_key = solicitar_api_key()
+
+        if opcion == "1":
+            entrada = input(
+                "Escribe la ciudad en formato CIUDAD,SIGLAS_DEL_PAIS "
+                "(ej. Mexico City,MX): "
+            )
+            ciudad, pais = validar_ciudad(entrada)
+            parametros = parametros_por_ciudad(ciudad, pais, api_key)
+        elif opcion == "2":
+            latitud = input("Latitud: ").strip()
+            longitud = input("Longitud: ").strip()
+            parametros = parametros_por_coordenadas(latitud, longitud, api_key)
+        else:
+            raise ValueError("La opción es incorrecta. Debes escribir 1 o 2.")
+
+        datos = consultar_clima(parametros)
+        clima = extraer_clima(datos)
+        mostrar_clima(clima)
+
+    except (ValueError, ClimaError) as error:
+        print(f"\nError: {error}")
+    except KeyboardInterrupt:
+        print("\nConsulta cancelada por el usuario.")
 
 
 if __name__ == "__main__":
-    ejecutar_programa()
+    main()

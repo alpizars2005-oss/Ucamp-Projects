@@ -37,3 +37,6 @@ jobs:
 
       - name: Run offline Semana 15 tests
         run: python -m unittest discover -s Retos_M4/Semana15/tests -v
+
+      - name: Run offline Pokédex tests
+        run: python -m unittest discover -s Proyecto_Ucamp/Proyecto_M4_Pokedex/tests -v

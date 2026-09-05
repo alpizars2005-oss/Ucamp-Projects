@@ -1,0 +1,32 @@
+{
+    "nota": "Ejemplo incluido para mostrar la estructura del archivo. Al ejecutar pokedex.py se genera un archivo con la respuesta completa y actual de PokéAPI.",
+    "imagen_frontal": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+    "pokemon": {
+        "id": 25,
+        "name": "pikachu",
+        "height": 4,
+        "weight": 60,
+        "types": [
+            {
+                "type": {
+                    "name": "electric"
+                }
+            }
+        ],
+        "abilities": [
+            {
+                "ability": {
+                    "name": "static"
+                }
+            },
+            {
+                "ability": {
+                    "name": "lightning-rod"
+                }
+            }
+        ],
+        "sprites": {
+            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+        }
+    }
+}

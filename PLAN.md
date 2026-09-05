@@ -78,3 +78,72 @@ Convertir el repositorio de ejercicios en un portafolio académico verificable s
 ## Riesgo y rollback
 
 Riesgo bajo: no se cambia la lógica de los retos. CI y archivos de higiene pueden revertirse de forma independiente.
+
+---
+
+# Cierre del Módulo 4 — reto OpenWeather y proyecto Pokédex — 2026-09-04
+
+## Objetivo
+
+Alinear el reto semanal de OpenWeather con la consigna final de UCAMP y añadir el proyecto integrador del Módulo 4 (Pokédex) sin perder el enfoque educativo del repositorio.
+
+## Commits planeados
+
+9. **Alinear reto de clima con la consigna final**
+   - Permitir consulta por ciudad o por latitud/longitud.
+   - Solicitar la API key durante la ejecución sin guardarla en el repositorio.
+   - Validar entradas y códigos HTTP con mensajes claros.
+   - Mantener pruebas unitarias sin llamadas reales a OpenWeather.
+
+10. **Añadir proyecto Pokédex del Módulo 4**
+   - Consumir PokéAPI con `requests`.
+   - Mostrar peso, tamaño, movimientos, habilidades, tipos, estadísticas e imagen frontal.
+   - Guardar la respuesta completa en JSON dentro de `pokedex/`.
+   - Incluir README, ejemplo y pruebas unitarias.
+
+11. **Integrar documentación y CI del Módulo 4**
+   - Actualizar README raíz y README del módulo.
+   - Declarar `requests` como dependencia.
+   - Ejecutar en CI las pruebas del reto de clima y de la Pokédex.
+
+## Verificación
+
+- Ejecutar las pruebas del reto de clima sin conexión ni API key real.
+- Ejecutar las pruebas de la Pokédex sin conexión.
+- Compilar los archivos Python modificados.
+- Confirmar que no se almacena ninguna API key.
+- Verificar que los README permiten explicar y ejecutar cada entrega.
+
+## Riesgo y rollback
+
+Riesgo bajo. Los cambios están limitados al cierre del Módulo 4, documentación y CI. El rollback consiste en revertir los commits 9–11 de forma independiente.
+
+
+---
+
+# Blindaje final de rúbrica — Pokédex Módulo 4 — 2026-09-04
+
+## Objetivo
+
+Cerrar los puntos interpretables de la rúbrica de entrega sin cambiar el comportamiento funcional ya verificado.
+
+## Commits planeados
+
+12. **Añadir índice y trazabilidad de la rúbrica**
+   - Incorporar un índice navegable al README del proyecto.
+   - Hacer explícita la relación entre cada criterio y la evidencia del repositorio.
+   - Conservar instrucciones de instalación, ejecución, pruebas y reflexión.
+
+13. **Reforzar comentarios educativos del código**
+   - Añadir comentarios útiles en las partes clave del flujo HTTP, conversiones de unidades, despliegue de imagen y persistencia JSON.
+   - Evitar comentarios redundantes o que dificulten explicar el código línea por línea.
+   - Mantener intacto el comportamiento funcional.
+
+14. **Verificar CI y evidencia de ejecución**
+   - Ejecutar nuevamente las pruebas y compilación mediante GitHub Actions.
+   - Mantener el JSON de ejemplo versionado.
+   - No inventar ni reconstruir el archivo `squirtle.json` generado localmente; se añadirá sólo si se dispone del archivo real producido por la ejecución manual.
+
+## Riesgo y rollback
+
+Riesgo mínimo: documentación y comentarios, sin cambios esperados de lógica. Cada commit puede revertirse de forma independiente.
