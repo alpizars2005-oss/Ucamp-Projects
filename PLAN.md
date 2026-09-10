@@ -147,3 +147,44 @@ Cerrar los puntos interpretables de la rúbrica de entrega sin cambiar el compor
 ## Riesgo y rollback
 
 Riesgo mínimo: documentación y comentarios, sin cambios esperados de lógica. Cada commit puede revertirse de forma independiente.
+
+---
+
+# Módulo 5 — SCRUM — Semana 1 — 2026-09-10
+
+## Objetivo
+
+Resolver el reto **Definición del Caso de Estudio** seleccionando un proyecto real, justificando su abordaje con Scrum y mapeando las responsabilidades de Product Owner, Scrum Master y Development Team.
+
+Se adopta `Retos_M5/` como continuación conservadora de la estructura existente del repositorio. El caso de estudio será **Mochi Monchi - Sistema digital de pedidos e inventario**.
+
+## Commits planeados
+
+15. **Documentar plan del reto Scrum semana 1**
+   - Registrar alcance, criterio de organización y verificación antes de integrar la entrega.
+
+16. **Añadir caso de estudio Scrum semana 1**
+   - Documentar el producto seleccionado.
+   - Incluir una justificación de Scrum de máximo 200 palabras.
+   - Crear la matriz inicial de responsabilidades del Scrum Team.
+   - Mantener explícita la separación de responsabilidades aun cuando el proyecto sea individual.
+
+17. **Documentar módulo Scrum**
+   - Crear el README del Módulo 5 con alcance, entregables y trazabilidad de la rúbrica.
+
+18. **Integrar módulo Scrum al índice principal**
+   - Actualizar la estructura y la sección de retos del README raíz.
+   - Añadir Scrum, Product Backlog, sprints e iteración incremental a las habilidades en progreso.
+
+## Verificación
+
+- La justificación de Scrum debe tener 200 palabras o menos.
+- El proyecto debe describir un producto o servicio concreto.
+- La justificación debe mencionar explícitamente incertidumbre/complejidad, retroalimentación e iteración.
+- Deben distinguirse correctamente Product Owner, Scrum Master y Development Team.
+- No se modifica código ejecutable ni dependencias; las pruebas automatizadas no aplican a esta entrega documental.
+- La versión DOCX/PDF se revisa visualmente antes de entrega.
+
+## Riesgo y rollback
+
+Riesgo mínimo: cambios exclusivamente documentales. Cada commit puede revertirse de forma independiente sin afectar los ejercicios de Python ni el CI existente.
