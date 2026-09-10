@@ -1,8 +1,8 @@
 # Proyectos UCAMP
 
-Repositorio con proyectos, retos semanales y ejercicios de programación realizados durante mi formación en **UCAMP**.
+Repositorio con proyectos, retos semanales y ejercicios realizados durante mi formación en **UCAMP**.
 
-Este espacio documenta mi progreso en fundamentos de Python, lógica de programación, validación de datos, resolución de problemas, funciones, módulos, números aleatorios, gráficas, manejo de excepciones, archivos, consumo de APIs y control de versiones con Git y GitHub.
+Este espacio documenta mi progreso en fundamentos de Python, lógica de programación, validación de datos, resolución de problemas, funciones, módulos, números aleatorios, gráficas, manejo de excepciones, archivos, consumo de APIs, control de versiones con Git y GitHub, y aplicación de marcos ágiles con Scrum.
 
 ## Idioma del repositorio
 
@@ -48,6 +48,10 @@ Ucamp-Projects/
 │       ├── README.md
 │       └── tests/
 │           └── test_semana15.py
+├── Retos_M5/
+│   ├── README.md
+│   └── Semana1_SCRUM/
+│       └── Caso_de_Estudio_SCRUM.md
 ├── .github/
 │   └── workflows/
 │       └── ci.yml
@@ -145,6 +149,23 @@ Conceptos practicados:
 
 La documentación específica, el ejemplo y la reflexión del proyecto están en [`Proyecto_M4_Pokedex/README.md`](Proyecto_Ucamp/Proyecto_M4_Pokedex/README.md).
 
+### Módulo 5 — Scrum aplicado a un caso de estudio
+
+**Carpeta:** [`Retos_M5/`](Retos_M5/)
+
+El módulo final introduce la aplicación práctica de **Scrum**. El caso de estudio seleccionado es **Mochi Monchi - Sistema digital de pedidos e inventario**, un producto de software con requisitos que pueden evolucionar conforme se valida su uso real.
+
+La Semana 1 define el producto, justifica Scrum frente a un enfoque tradicional y mapea las responsabilidades de Product Owner, Scrum Master y Development Team. La documentación específica está en [`Retos_M5/Semana1_SCRUM/Caso_de_Estudio_SCRUM.md`](Retos_M5/Semana1_SCRUM/Caso_de_Estudio_SCRUM.md).
+
+Conceptos practicados:
+
+- Scrum y trabajo incremental
+- Incertidumbre y complejidad de requisitos
+- Product Owner, Scrum Master y Development Team
+- Product Backlog y priorización por valor
+- Sprints, retroalimentación e iteración
+- Trazabilidad de criterios de evaluación
+
 ## Retos semanales del Módulo 2
 
 | Semana | Ejercicio | Conceptos principales | Archivo |
@@ -175,6 +196,14 @@ El Módulo 4 trabaja manejo de errores y excepciones, archivos, persistencia de 
 | **14** | Lee contactos desde un archivo, los muestra numerados, permite modificar nombre, teléfono y correo, y guarda los cambios. | Lectura y escritura de archivos, `Path`, validación, excepciones, listas, diccionarios y persistencia | [`Semana14/`](Retos_M4/Semana14/) |
 | **15** | Consulta el clima actual mediante OpenWeather por ciudad o por coordenadas; solicita la API key al ejecutar y muestra un mensaje descriptivo del clima. | HTTP GET, `requests`, APIs REST, JSON, validación, status codes, `getpass`, manejo de errores y pruebas unitarias | [`Semana15/`](Retos_M4/Semana15/) |
 
+## Retos semanales del Módulo 5
+
+El Módulo 5 aplica Scrum sobre un caso de estudio que continuará evolucionando durante el resto del módulo. Los retos están documentados en [`Retos_M5/README.md`](Retos_M5/README.md).
+
+| Semana | Ejercicio | Conceptos principales | Archivo |
+|---|---|---|---|
+| **1** | Selecciona un caso de estudio, justifica el uso de Scrum y define la matriz inicial del Scrum Team. | Marco ágil, incertidumbre, Product Owner, Scrum Master, Development Team, iteración y valor | [`Caso_de_Estudio_SCRUM.md`](Retos_M5/Semana1_SCRUM/Caso_de_Estudio_SCRUM.md) |
+
 ## Tecnologías y herramientas
 
 - Python
@@ -182,6 +211,7 @@ El Módulo 4 trabaja manejo de errores y excepciones, archivos, persistencia de 
 - Requests
 - OpenWeather API
 - PokéAPI
+- Scrum
 - Git
 - GitHub
 - Visual Studio Code
@@ -210,6 +240,9 @@ El Módulo 4 trabaja manejo de errores y excepciones, archivos, persistencia de 
 - Pruebas unitarias con `unittest`
 - Organización y documentación del código
 - Control de versiones y administración de repositorios
+- Selección y definición de productos mediante casos de estudio
+- Mapeo de responsabilidades dentro de un Scrum Team
+- Priorización por valor, iteración y retroalimentación
 
 ## Instalación y ejecución
 
@@ -274,17 +307,19 @@ En algunos sistemas Linux puede ser necesario utilizar `python3` y `pip3`.
 
 ## Verificación automática
 
-GitHub Actions verifica las versiones de Python declaradas en el workflow, instala dependencias, compila los ejercicios y ejecuta las pruebas unitarias que no requieren acceso real a las APIs.
+GitHub Actions verifica las versiones de Python declaradas en el workflow, instala dependencias, compila los ejercicios y ejecuta las pruebas unitarias que no requieren acceso real a las APIs. Las entregas documentales de Scrum se validan contra su consigna y rúbrica, sin añadir dependencias al proyecto.
 
 ## Reflexión de aprendizaje
 
-Estos proyectos muestran mi progreso desde la creación de mi primer programa interactivo en Python hasta el desarrollo de soluciones con validaciones más completas, estructuras de control, colecciones, funciones, módulos, simulaciones, representaciones gráficas, manejo de excepciones, persistencia de datos en archivos y consumo seguro de servicios web.
+Estos proyectos muestran mi progreso desde la creación de mi primer programa interactivo en Python hasta el desarrollo de soluciones con validaciones más completas, estructuras de control, colecciones, funciones, módulos, simulaciones, representaciones gráficas, manejo de excepciones, persistencia de datos en archivos, consumo seguro de servicios web y aplicación de prácticas ágiles.
 
 El bootcamp me ha ayudado a comprender que programar no consiste únicamente en lograr que un programa funcione, sino también en dividir un problema en pasos más pequeños, anticipar entradas incorrectas, organizar el código de forma clara y documentar la solución para que otras personas puedan entenderla.
 
 El cierre del Módulo 4 añadió una práctica importante: trabajar con servicios externos sin depender de ellos durante las pruebas. Simular respuestas de OpenWeather y PokéAPI permite comprobar validaciones, errores y persistencia de archivos de manera repetible.
 
-Continuaré actualizando este repositorio conforme complete nuevos módulos, retos y proyectos.
+El Módulo 5 amplía esa perspectiva hacia la gestión del desarrollo: definir un producto, priorizar valor, trabajar de forma incremental y utilizar retroalimentación frecuente para adaptar el resultado a necesidades reales.
+
+Continuaré actualizando este repositorio conforme complete nuevos retos y proyectos.
 
 ## Autor
 
