@@ -22,12 +22,12 @@ La consigna solicita:
 2. justificar en un máximo de 200 palabras por qué se beneficia de Scrum frente a un enfoque tradicional; y
 3. mapear las responsabilidades de Product Owner, Scrum Master y Development Team, incluso cuando el proyecto sea individual.
 
-La entrega versionada incluye la selección del proyecto, una justificación de **161 palabras**, la matriz inicial del Scrum Team y una comprobación explícita contra los criterios de evaluación.
+La entrega versionada incluye la selección del proyecto, una justificación final de **126 palabras** con redacción más personal, la matriz inicial del Scrum Team y una comprobación explícita contra los criterios de evaluación.
 
 ## Trazabilidad de la rúbrica
 
 - **Proyecto claro:** se define un producto de software concreto con utilidad operativa.
-- **Scrum justificado:** la elección se fundamenta en incertidumbre de requisitos, complejidad evolutiva, iteración y retroalimentación.
+- **Scrum justificado:** la elección se fundamenta en incertidumbre de requisitos, cambios, iteración y retroalimentación.
 - **Roles identificados:** se separan las responsabilidades de Product Owner, Scrum Master y Development Team dentro del contexto académico individual.
 
 ## Verificación
