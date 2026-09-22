@@ -14,6 +14,7 @@ El producto busca centralizar catálogo, pedidos, recetas, inventario, costos y 
 |---|---|---|---|
 | **1** | Definición del Caso de Estudio | Selección de producto, incertidumbre, marco ágil, Product Owner, Scrum Master y Development Team | [`Semana1_SCRUM/Caso_de_Estudio_SCRUM.md`](Semana1_SCRUM/Caso_de_Estudio_SCRUM.md) |
 | **2** | Product Vision Board | Visión, grupo objetivo, necesidades, producto, beneficios y propuesta de valor | [`Semana2_SCRUM/Product_Vision_Board.md`](Semana2_SCRUM/Product_Vision_Board.md) |
+| **3** | User Story Mapping y MVP | Recorrido del usuario, historias, hipótesis de valor, MVP, release plan y feedback | [`Semana3_SCRUM/User_Story_Mapping_MVP.md`](Semana3_SCRUM/User_Story_Mapping_MVP.md) |
 
 ## Semana 1 — Definición del Caso de Estudio
 
@@ -51,13 +52,26 @@ El diferenciador del producto es conectar cada pedido con su receta e inventario
 - **Valor único y diferenciado:** se explicita la integración entre pedidos, recetas e inventario como ventaja frente a soluciones genéricas.
 - **Claridad para stakeholders:** la redacción usa lenguaje directo, concreto y orientado a la operación del negocio.
 
+## Semana 3 — User Story Mapping y MVP
+
+El recorrido principal del usuario se organiza en cinco actividades: revisar el turno, registrar el pedido, confirmar, actualizar la operación y cerrar/aprender. La hipótesis central es que conectar cada pedido con su receta e inventario reducirá la doble captura y hará más visible qué productos pueden seguir vendiéndose.
+
+El **MVP / Release 1** incluye catálogo, pedidos, recetas, descuento automático de inventario, consulta de stock, alertas básicas, resumen diario y una observación de feedback al cierre del turno. Funciones como tickets, usuarios, exportación de reportes, promociones y pedidos en línea permanecen fuera del MVP.
+
+### Trazabilidad de la rúbrica — Semana 3
+
+- **Experiencia clara:** el User Story Mapping muestra el recorrido completo del usuario.
+- **MVP diferenciado:** las funciones de Release 1 están separadas del backlog y de las mejoras posteriores.
+- **Feedback:** la primera versión permite observar tiempos, errores, faltantes y comentarios reales del operador para priorizar la siguiente iteración.
+
 ## Verificación
 
-Las semanas 1 y 2 son entregas documentales y no modifican código ejecutable ni dependencias, por lo que no requieren pruebas unitarias. La verificación consiste en comprobar que:
+Las semanas 1, 2 y 3 son entregas documentales y no modifican código ejecutable ni dependencias, por lo que no requieren pruebas unitarias. La verificación consiste en comprobar que:
 
 - cada entrega responde a todos los campos y criterios solicitados;
 - el caso de estudio se mantiene consistente entre semanas;
-- la redacción es clara y puede explicarse durante una revisión académica; y
+- la redacción es clara y puede explicarse durante una revisión académica;
+- el MVP está separado visualmente del backlog; y
 - las versiones DOCX/PDF se revisan visualmente antes de entrega.
 
 Este README se actualizará conforme se publiquen los siguientes retos del módulo.
