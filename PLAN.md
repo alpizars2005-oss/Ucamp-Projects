@@ -118,7 +118,6 @@ Alinear el reto semanal de OpenWeather con la consigna final de UCAMP y añadir 
 
 Riesgo bajo. Los cambios están limitados al cierre del Módulo 4, documentación y CI. El rollback consiste en revertir los commits 9–11 de forma independiente.
 
-
 ---
 
 # Blindaje final de rúbrica — Pokédex Módulo 4 — 2026-09-04
@@ -188,3 +187,43 @@ Se adopta `Retos_M5/` como continuación conservadora de la estructura existente
 ## Riesgo y rollback
 
 Riesgo mínimo: cambios exclusivamente documentales. Cada commit puede revertirse de forma independiente sin afectar los ejercicios de Python ni el CI existente.
+
+
+---
+
+# Módulo 5 — SCRUM — Semana 3 — 2026-09-22
+
+## Objetivo
+
+Resolver el reto **User Story Mapping y MVP** continuando con el caso de estudio **Mochi Monchi - Sistema digital de pedidos e inventario**.
+
+La entrega debe visualizar el recorrido del usuario, separar claramente el MVP del resto del backlog y dejar explícita la forma en que la primera versión permitirá obtener retroalimentación real.
+
+## Commits planeados
+
+19. **Documentar plan del reto Scrum semana 3**
+   - Registrar recorrido de usuario, hipótesis a validar y criterio de separación entre MVP y backlog.
+
+20. **Añadir User Story Mapping y MVP**
+   - Mapear el recorrido desde la revisión del turno hasta el cierre.
+   - Identificar historias necesarias para registrar pedidos y mantener inventario actualizado.
+   - Marcar visualmente las historias incluidas en Release 1.
+   - Definir backlog priorizado y funciones posteriores.
+
+21. **Documentar validación y feedback**
+   - Explicar el criterio de éxito del MVP.
+   - Registrar qué datos y comentarios se usarán para decidir las siguientes prioridades.
+   - Actualizar la documentación del Módulo 5 y el índice principal.
+
+## Verificación
+
+- El mapa debe mostrar un recorrido de usuario comprensible de principio a fin.
+- El MVP debe estar visualmente diferenciado del resto del backlog.
+- El MVP debe incluir una forma concreta de recolectar feedback de uso.
+- La solución debe mantener continuidad con el Product Vision Board de Semana 2.
+- La entrega DOCX/PDF debe revisarse visualmente antes de subirla.
+- No hay código ejecutable ni dependencias nuevas; no aplican pruebas unitarias.
+
+## Riesgo y rollback
+
+Riesgo mínimo. Los cambios son documentales y pueden revertirse de forma independiente sin afectar los ejercicios de programación ni el CI.
