@@ -155,7 +155,7 @@ La documentación específica, el ejemplo y la reflexión del proyecto están en
 
 El módulo final introduce la aplicación práctica de **Scrum**. El caso de estudio seleccionado es **Mochi Monchi - Sistema digital de pedidos e inventario**, un producto de software con requisitos que pueden evolucionar conforme se valida su uso real.
 
-La Semana 1 define el producto, justifica Scrum frente a un enfoque tradicional y mapea las responsabilidades de Product Owner, Scrum Master y Development Team. La documentación específica está en [`Retos_M5/Semana1_SCRUM/Caso_de_Estudio_SCRUM.md`](Retos_M5/Semana1_SCRUM/Caso_de_Estudio_SCRUM.md).
+La Semana 1 define el producto y los roles; la Semana 2 construye el Product Vision Board; y la Semana 3 desarrolla el User Story Mapping, separa el MVP del backlog y define cómo obtener retroalimentación real de la operación.
 
 Conceptos practicados:
 
@@ -202,7 +202,7 @@ El Módulo 5 aplica Scrum sobre un caso de estudio que continuará evolucionando
 
 | Semana | Ejercicio | Conceptos principales | Archivo |
 |---|---|---|---|
-| **1** | Selecciona un caso de estudio, justifica el uso de Scrum y define la matriz inicial del Scrum Team. | Marco ágil, incertidumbre, Product Owner, Scrum Master, Development Team, iteración y valor | [`Caso_de_Estudio_SCRUM.md`](Retos_M5/Semana1_SCRUM/Caso_de_Estudio_SCRUM.md) |
+| **1** | Selecciona un caso de estudio, justifica el uso de Scrum y define la matriz inicial del Scrum Team. | Marco ágil, incertidumbre, Product Owner, Scrum Master, Development Team, iteración y valor | [`Caso_de_Estudio_SCRUM.md`](Retos_M5/Semana1_SCRUM/Caso_de_Estudio_SCRUM.md) |\n| **2** | Construye el Product Vision Board del caso de estudio. | Visión, grupo objetivo, necesidades, producto, beneficios y propuesta de valor | [`Product_Vision_Board.md`](Retos_M5/Semana2_SCRUM/Product_Vision_Board.md) |\n| **3** | Diseña el User Story Mapping y define el MVP con su release plan. | Recorrido del usuario, historias, MVP, backlog, hipótesis y feedback | [`User_Story_Mapping_MVP.md`](Retos_M5/Semana3_SCRUM/User_Story_Mapping_MVP.md) |
 
 ## Tecnologías y herramientas
 
@@ -242,7 +242,7 @@ El Módulo 5 aplica Scrum sobre un caso de estudio que continuará evolucionando
 - Control de versiones y administración de repositorios
 - Selección y definición de productos mediante casos de estudio
 - Mapeo de responsabilidades dentro de un Scrum Team
-- Priorización por valor, iteración y retroalimentación
+- Priorización por valor, iteración y retroalimentación\n- User Story Mapping, MVP y release planning
 
 ## Instalación y ejecución
 
