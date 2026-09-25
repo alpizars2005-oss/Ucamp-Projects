@@ -227,3 +227,47 @@ La entrega debe visualizar el recorrido del usuario, separar claramente el MVP d
 ## Riesgo y rollback
 
 Riesgo mínimo. Los cambios son documentales y pueden revertirse de forma independiente sin afectar los ejercicios de programación ni el CI.
+
+
+---
+
+# Refinamiento visual — SCRUM Semana 3 — 2026-09-25
+
+## Objetivo
+
+Cerrar la entrega de **User Story Mapping y MVP** con una evidencia visual lista para llevar a Miro/Mural, mejorar la trazabilidad de historias de usuario y corregir detalles de documentación detectados en la revisión del repositorio.
+
+## Commits planeados
+
+22. **Documentar refinamiento visual de Scrum semana 3**
+   - Registrar el alcance de esta revisión antes de modificar los entregables.
+
+23. **Refinar historias y criterio del MVP**
+   - Convertir tareas clave en historias de usuario con formato claro.
+   - Mantener un recorrido completo desde la apertura del turno hasta el aprendizaje posterior.
+   - Añadir métricas concretas de feedback sin ampliar innecesariamente el alcance del MVP.
+
+24. **Añadir tablero visual de User Story Mapping**
+   - Crear una versión SVG legible del tablero con backbone, Release 1/MVP, Release 2 y futuro.
+   - Mantener una leyenda visual que diferencie el MVP del backlog.
+
+25. **Añadir guía de entrega en Miro/Mural**
+   - Explicar cómo montar o importar la evidencia en una herramienta colaborativa.
+   - Indicar qué capturas tomar para cumplir la consigna sin inventar evidencia.
+
+26. **Actualizar índices del módulo y repositorio**
+   - Enlazar el tablero visual y la guía.
+   - Corregir saltos de línea literales y completar la estructura de Semana 2 y Semana 3 en el README raíz.
+
+## Verificación
+
+- El tablero muestra el recorrido del usuario de izquierda a derecha.
+- Las historias del MVP están claramente separadas de Release 2 y del backlog futuro.
+- El MVP incluye mecanismos concretos para obtener feedback: tiempo de registro, correcciones, faltantes detectados y valoración/comentario del operador.
+- La documentación mantiene continuidad con el Product Vision Board de Semana 2.
+- El SVG debe abrir correctamente en navegador y conservar texto legible a tamaño de presentación.
+- No se modifica código ejecutable ni se agregan dependencias.
+
+## Riesgo y rollback
+
+Riesgo mínimo. Los cambios son documentales y visuales. La rama puede descartarse completa o cada commit puede revertirse de forma independiente sin afectar los ejercicios de programación.
