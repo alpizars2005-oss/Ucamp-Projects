@@ -50,8 +50,14 @@ Ucamp-Projects/
 │           └── test_semana15.py
 ├── Retos_M5/
 │   ├── README.md
-│   └── Semana1_SCRUM/
-│       └── Caso_de_Estudio_SCRUM.md
+│   ├── Semana1_SCRUM/
+│   │   └── Caso_de_Estudio_SCRUM.md
+│   ├── Semana2_SCRUM/
+│   │   └── Product_Vision_Board.md
+│   └── Semana3_SCRUM/
+│       ├── User_Story_Mapping_MVP.md
+│       ├── Tablero_User_Story_Mapping.svg
+│       └── GUIA_ENTREGA.md
 ├── .github/
 │   └── workflows/
 │       └── ci.yml
@@ -202,7 +208,9 @@ El Módulo 5 aplica Scrum sobre un caso de estudio que continuará evolucionando
 
 | Semana | Ejercicio | Conceptos principales | Archivo |
 |---|---|---|---|
-| **1** | Selecciona un caso de estudio, justifica el uso de Scrum y define la matriz inicial del Scrum Team. | Marco ágil, incertidumbre, Product Owner, Scrum Master, Development Team, iteración y valor | [`Caso_de_Estudio_SCRUM.md`](Retos_M5/Semana1_SCRUM/Caso_de_Estudio_SCRUM.md) |\n| **2** | Construye el Product Vision Board del caso de estudio. | Visión, grupo objetivo, necesidades, producto, beneficios y propuesta de valor | [`Product_Vision_Board.md`](Retos_M5/Semana2_SCRUM/Product_Vision_Board.md) |\n| **3** | Diseña el User Story Mapping y define el MVP con su release plan. | Recorrido del usuario, historias, MVP, backlog, hipótesis y feedback | [`User_Story_Mapping_MVP.md`](Retos_M5/Semana3_SCRUM/User_Story_Mapping_MVP.md) |
+| **1** | Selecciona un caso de estudio, justifica el uso de Scrum y define la matriz inicial del Scrum Team. | Marco ágil, incertidumbre, Product Owner, Scrum Master, Development Team, iteración y valor | [`Caso_de_Estudio_SCRUM.md`](Retos_M5/Semana1_SCRUM/Caso_de_Estudio_SCRUM.md) |
+| **2** | Construye el Product Vision Board del caso de estudio. | Visión, grupo objetivo, necesidades, producto, beneficios y propuesta de valor | [`Product_Vision_Board.md`](Retos_M5/Semana2_SCRUM/Product_Vision_Board.md) |
+| **3** | Diseña el User Story Mapping y define el MVP con su release plan. | Recorrido del usuario, historias, MVP, backlog, hipótesis y feedback | [`Documento`](Retos_M5/Semana3_SCRUM/User_Story_Mapping_MVP.md) · [`Tablero`](Retos_M5/Semana3_SCRUM/Tablero_User_Story_Mapping.svg) |
 
 ## Tecnologías y herramientas
 
@@ -242,7 +250,8 @@ El Módulo 5 aplica Scrum sobre un caso de estudio que continuará evolucionando
 - Control de versiones y administración de repositorios
 - Selección y definición de productos mediante casos de estudio
 - Mapeo de responsabilidades dentro de un Scrum Team
-- Priorización por valor, iteración y retroalimentación\n- User Story Mapping, MVP y release planning
+- Priorización por valor, iteración y retroalimentación
+- User Story Mapping, MVP y release planning
 
 ## Instalación y ejecución
 

@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1180" viewBox="0 0 1800 1180" role="img" aria-labelledby="title desc">
+  <title id="title">User Story Mapping y MVP - Mochi Monchi</title>
+  <desc id="desc">Tablero de cinco etapas con historias del MVP, Release 2 y backlog futuro.</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .title{font:700 40px Arial,Helvetica,sans-serif;fill:#fff}
+      .subtitle{font:400 19px Arial,Helvetica,sans-serif;fill:#e9ddff}
+      .lane{font:700 22px Arial,Helvetica,sans-serif;fill:#30105f}
+      .step{font:700 19px Arial,Helvetica,sans-serif;fill:#fff}
+      .cardTitle{font:700 16px Arial,Helvetica,sans-serif;fill:#23143a}
+      .cardText{font:400 14px Arial,Helvetica,sans-serif;fill:#35294a}
+      .small{font:400 13px Arial,Helvetica,sans-serif;fill:#645a72}
+      .legend{font:600 14px Arial,Helvetica,sans-serif;fill:#392954}
+    </style>
+  </defs>
+
+  <rect width="1800" height="1180" fill="#f6f4fb"/>
+  <rect x="0" y="0" width="1800" height="128" fill="#4a08c7"/>
+  <text class="title" x="72" y="58">Mochi Monchi — User Story Mapping &amp; MVP</text>
+  <text class="subtitle" x="72" y="91">SCRUM · Semana 3 · Hipótesis: un pedido confirmado actualiza automáticamente el inventario por receta</text>
+
+  <g transform="translate(72,151)">
+    <rect x="0" y="0" width="20" height="20" rx="5" fill="#3fe0c5"/>
+    <text class="legend" x="30" y="15">Release 1 / MVP</text>
+    <rect x="170" y="0" width="20" height="20" rx="5" fill="#ffd86b"/>
+    <text class="legend" x="200" y="15">Release 2</text>
+    <rect x="320" y="0" width="20" height="20" rx="5" fill="#ded8ef"/>
+    <text class="legend" x="350" y="15">Backlog futuro</text>
+    <text class="small" x="1210" y="15">Recorrido principal → de izquierda a derecha</text>
+  </g>
+
+  <!-- Backbone -->
+  <text class="lane" x="72" y="228">BACKBONE / RECORRIDO DEL USUARIO</text>
+  <g filter="url(#shadow)">
+    <rect x="72" y="250" width="320" height="74" rx="14" fill="#5c20d6"/>
+    <rect x="408" y="250" width="320" height="74" rx="14" fill="#5c20d6"/>
+    <rect x="744" y="250" width="320" height="74" rx="14" fill="#5c20d6"/>
+    <rect x="1080" y="250" width="320" height="74" rx="14" fill="#5c20d6"/>
+    <rect x="1416" y="250" width="312" height="74" rx="14" fill="#5c20d6"/>
+  </g>
+  <text class="step" x="232" y="283" text-anchor="middle">1. Revisar turno</text>
+  <text class="step" x="568" y="283" text-anchor="middle">2. Registrar pedido</text>
+  <text class="step" x="904" y="283" text-anchor="middle">3. Confirmar venta</text>
+  <text class="step" x="1240" y="283" text-anchor="middle">4. Actualizar operación</text>
+  <text class="step" x="1572" y="283" text-anchor="middle">5. Cerrar y aprender</text>
+  <text class="small" x="232" y="306" text-anchor="middle" fill="#eee">Prepararse para vender</text>
+  <text class="small" x="568" y="306" text-anchor="middle" fill="#eee">Capturar una sola vez</text>
+  <text class="small" x="904" y="306" text-anchor="middle" fill="#eee">Validar y guardar</text>
+  <text class="small" x="1240" y="306" text-anchor="middle" fill="#eee">Stock en tiempo real</text>
+  <text class="small" x="1572" y="306" text-anchor="middle" fill="#eee">Medir y mejorar</text>
+
+  <!-- MVP lane -->
+  <rect x="46" y="351" width="1708" height="366" rx="20" fill="#e8fff9" stroke="#3fe0c5" stroke-width="3"/>
+  <text class="lane" x="72" y="389">RELEASE 1 — MVP</text>
+  <text class="small" x="255" y="389">mínimo para validar valor y recolectar feedback real</text>
+
+  <!-- MVP cards col1 -->
+  <g filter="url(#shadow)">
+    <rect x="72" y="414" width="320" height="125" rx="12" fill="#ffffff"/>
+    <rect x="72" y="555" width="320" height="125" rx="12" fill="#ffffff"/>
+  </g>
+  <text class="cardTitle" x="92" y="443">US-01 · Catálogo vigente</text>
+  <text class="cardText" x="92" y="470"><tspan x="92" dy="0">Como operador, quiero abrir catálogo</tspan><tspan x="92" dy="20">y precios para iniciar ventas sin</tspan><tspan x="92" dy="20">consultar varias fuentes.</tspan></text>
+  <text class="cardTitle" x="92" y="584">US-02 · Stock y alertas</text>
+  <text class="cardText" x="92" y="611"><tspan x="92" dy="0">Quiero ver stock y alertas simples</tspan><tspan x="92" dy="20">para detectar riesgo de faltantes</tspan><tspan x="92" dy="20">antes de vender.</tspan></text>
+
+  <!-- MVP cards col2 -->
+  <g filter="url(#shadow)">
+    <rect x="408" y="414" width="320" height="125" rx="12" fill="#ffffff"/>
+    <rect x="408" y="555" width="320" height="125" rx="12" fill="#ffffff"/>
+  </g>
+  <text class="cardTitle" x="428" y="443">US-03 · Crear pedido</text>
+  <text class="cardText" x="428" y="470"><tspan x="428" dy="0">Agregar productos y cantidades</tspan><tspan x="428" dy="20">para registrar la venta una sola vez</tspan><tspan x="428" dy="20">y evitar doble captura.</tspan></text>
+  <text class="cardTitle" x="428" y="584">US-04 · Nota breve</text>
+  <text class="cardText" x="428" y="611"><tspan x="428" dy="0">Añadir una nota al pedido para</tspan><tspan x="428" dy="20">registrar ajustes simples sin romper</tspan><tspan x="428" dy="20">el flujo principal.</tspan></text>
+
+  <!-- MVP cards col3 -->
+  <g filter="url(#shadow)">
+    <rect x="744" y="414" width="320" height="125" rx="12" fill="#ffffff"/>
+    <rect x="744" y="555" width="320" height="125" rx="12" fill="#ffffff"/>
+  </g>
+  <text class="cardTitle" x="764" y="443">US-05 · Revisar total</text>
+  <text class="cardText" x="764" y="470"><tspan x="764" dy="0">Revisar productos y total antes</tspan><tspan x="764" dy="20">de confirmar para detectar errores</tspan><tspan x="764" dy="20">a tiempo.</tspan></text>
+  <text class="cardTitle" x="764" y="584">US-06 · Confirmar y guardar</text>
+  <text class="cardText" x="764" y="611"><tspan x="764" dy="0">Confirmar el pedido para dejarlo</tspan><tspan x="764" dy="20">registrado dentro de la operación</tspan><tspan x="764" dy="20">del día.</tspan></text>
+
+  <!-- MVP cards col4 -->
+  <g filter="url(#shadow)">
+    <rect x="1080" y="414" width="320" height="125" rx="12" fill="#ffffff"/>
+    <rect x="1080" y="555" width="320" height="125" rx="12" fill="#ffffff"/>
+  </g>
+  <text class="cardTitle" x="1100" y="443">US-07 · Descuento por receta</text>
+  <text class="cardText" x="1100" y="470"><tspan x="1100" dy="0">Al confirmar, descontar ingredientes</tspan><tspan x="1100" dy="20">de la receta automáticamente para</tspan><tspan x="1100" dy="20">evitar doble captura.</tspan></text>
+  <text class="cardTitle" x="1100" y="584">US-08 · Existencias actualizadas</text>
+  <text class="cardText" x="1100" y="611"><tspan x="1100" dy="0">Consultar stock actualizado para</tspan><tspan x="1100" dy="20">saber qué productos siguen</tspan><tspan x="1100" dy="20">disponibles durante el turno.</tspan></text>
+
+  <!-- MVP cards col5 -->
+  <g filter="url(#shadow)">
+    <rect x="1416" y="414" width="312" height="125" rx="12" fill="#ffffff"/>
+    <rect x="1416" y="555" width="312" height="125" rx="12" fill="#ffffff"/>
+  </g>
+  <text class="cardTitle" x="1436" y="443">US-09 · Resumen diario</text>
+  <text class="cardText" x="1436" y="470"><tspan x="1436" dy="0">Ver pedidos del día para revisar</tspan><tspan x="1436" dy="20">rápidamente cómo terminó</tspan><tspan x="1436" dy="20">la operación.</tspan></text>
+  <text class="cardTitle" x="1436" y="584">US-10 · Feedback de cierre</text>
+  <text class="cardText" x="1436" y="611"><tspan x="1436" dy="0">Calificar de 1 a 5 y dejar comentario</tspan><tspan x="1436" dy="20">opcional para reportar fricciones</tspan><tspan x="1436" dy="20">y mejoras.</tspan></text>
+
+  <!-- Release 2 lane -->
+  <rect x="46" y="742" width="1708" height="185" rx="20" fill="#fff7d8" stroke="#f0c85d" stroke-width="2"/>
+  <text class="lane" x="72" y="780">RELEASE 2 — SIGUIENTE PRIORIDAD</text>
+  <g>
+    <rect x="72" y="803" width="320" height="91" rx="12" fill="#fffdf5"/>
+    <rect x="408" y="803" width="320" height="91" rx="12" fill="#fffdf5"/>
+    <rect x="744" y="803" width="320" height="91" rx="12" fill="#fffdf5"/>
+    <rect x="1080" y="803" width="320" height="91" rx="12" fill="#fffdf5"/>
+    <rect x="1416" y="803" width="312" height="91" rx="12" fill="#fffdf5"/>
+  </g>
+  <text class="cardText" x="92" y="835"><tspan x="92">Umbrales configurables</tspan><tspan x="92" dy="20">por ingrediente</tspan></text>
+  <text class="cardText" x="428" y="835"><tspan x="428">Editar/cancelar pedidos</tspan><tspan x="428" dy="20">y devolver inventario</tspan></text>
+  <text class="cardText" x="764" y="835"><tspan x="764">Métodos de pago</tspan><tspan x="764" dy="20">y ticket/recibo</tspan></text>
+  <text class="cardText" x="1100" y="835"><tspan x="1100">Sugerencia de compra</tspan><tspan x="1100" dy="20">y ajustes con historial</tspan></text>
+  <text class="cardText" x="1436" y="835"><tspan x="1436">Reportes exportables</tspan><tspan x="1436" dy="20">y filtros</tspan></text>
+
+  <!-- Future lane -->
+  <rect x="46" y="951" width="1708" height="151" rx="20" fill="#eeebf6" stroke="#cfc6e8" stroke-width="2"/>
+  <text class="lane" x="72" y="989">BACKLOG FUTURO</text>
+  <text class="cardText" x="72" y="1025">
+    <tspan x="72" dy="0">Pronóstico de demanda y compras sugeridas</tspan>
+    <tspan x="408" dy="0">Pedidos en línea y canales externos</tspan>
+    <tspan x="744" dy="0">Integración con terminales de pago</tspan>
+    <tspan x="1080" dy="0">Multi-sucursal y nube</tspan>
+    <tspan x="1416" dy="0">Analítica, promociones y notificaciones</tspan>
+  </text>
+
+  <!-- Footer -->
+  <text class="small" x="72" y="1140">Feedback del MVP: tiempo de registro · correcciones · faltantes detectados · valoración 1–5 + comentario</text>
+  <text class="small" x="1728" y="1140" text-anchor="end">UCAMP · SCRUM Semana 3</text>
+</svg>

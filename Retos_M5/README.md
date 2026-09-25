@@ -14,7 +14,7 @@ El producto busca centralizar catálogo, pedidos, recetas, inventario, costos y 
 |---|---|---|---|
 | **1** | Definición del Caso de Estudio | Selección de producto, incertidumbre, marco ágil, Product Owner, Scrum Master y Development Team | [`Semana1_SCRUM/Caso_de_Estudio_SCRUM.md`](Semana1_SCRUM/Caso_de_Estudio_SCRUM.md) |
 | **2** | Product Vision Board | Visión, grupo objetivo, necesidades, producto, beneficios y propuesta de valor | [`Semana2_SCRUM/Product_Vision_Board.md`](Semana2_SCRUM/Product_Vision_Board.md) |
-| **3** | User Story Mapping y MVP | Recorrido del usuario, historias, hipótesis de valor, MVP, release plan y feedback | [`Semana3_SCRUM/User_Story_Mapping_MVP.md`](Semana3_SCRUM/User_Story_Mapping_MVP.md) |
+| **3** | User Story Mapping y MVP | Recorrido del usuario, historias, hipótesis de valor, MVP, release plan y feedback | [`Documento`](Semana3_SCRUM/User_Story_Mapping_MVP.md) · [`Tablero SVG`](Semana3_SCRUM/Tablero_User_Story_Mapping.svg) · [`Guía de entrega`](Semana3_SCRUM/GUIA_ENTREGA.md) |
 
 ## Semana 1 — Definición del Caso de Estudio
 
@@ -56,13 +56,15 @@ El diferenciador del producto es conectar cada pedido con su receta e inventario
 
 El recorrido principal del usuario se organiza en cinco actividades: revisar el turno, registrar el pedido, confirmar, actualizar la operación y cerrar/aprender. La hipótesis central es que conectar cada pedido con su receta e inventario reducirá la doble captura y hará más visible qué productos pueden seguir vendiéndose.
 
-El **MVP / Release 1** incluye catálogo, pedidos, recetas, descuento automático de inventario, consulta de stock, alertas básicas, resumen diario y una observación de feedback al cierre del turno. Funciones como tickets, usuarios, exportación de reportes, promociones y pedidos en línea permanecen fuera del MVP.
+El **MVP / Release 1** incluye catálogo, pedidos, recetas, descuento automático de inventario, consulta de stock, alertas básicas, resumen diario y feedback de cierre. Las historias están identificadas como US-01 a US-10 y se organizan en un tablero visual con tres franjas: MVP, Release 2 y backlog futuro.
+
+La evidencia visual está disponible en [`Semana3_SCRUM/Tablero_User_Story_Mapping.svg`](Semana3_SCRUM/Tablero_User_Story_Mapping.svg), y [`Semana3_SCRUM/GUIA_ENTREGA.md`](Semana3_SCRUM/GUIA_ENTREGA.md) explica cómo llevarla a Miro/Mural y qué capturas tomar para la plantilla de UCAMP.
 
 ### Trazabilidad de la rúbrica — Semana 3
 
-- **Experiencia clara:** el User Story Mapping muestra el recorrido completo del usuario.
-- **MVP diferenciado:** las funciones de Release 1 están separadas del backlog y de las mejoras posteriores.
-- **Feedback:** la primera versión permite observar tiempos, errores, faltantes y comentarios reales del operador para priorizar la siguiente iteración.
+- **Experiencia clara:** el backbone muestra el recorrido completo del usuario de izquierda a derecha.
+- **MVP diferenciado:** Release 1 usa una franja propia y está separado de Release 2 y del backlog futuro.
+- **Feedback:** la primera versión permite observar tiempo de registro, correcciones y faltantes, además de capturar una valoración de 1 a 5 y un comentario opcional del operador.
 
 ## Verificación
 
