@@ -1,6 +1,7 @@
 """Proyecto final del Módulo 4 de UCAMP: Pokédex usando PokéAPI."""
 
 import json
+import re
 import textwrap
 import webbrowser
 from pathlib import Path
@@ -148,11 +149,17 @@ def mostrar_imagen(url):
 
 def guardar_pokemon(datos):
     """Guarda toda la respuesta y el enlace frontal dentro de /pokedex."""
-    # La carpeta se crea automáticamente si todavía no existe.
-    CARPETA_POKEDEX.mkdir(exist_ok=True)
-
+    if not isinstance(datos, dict):
+        raise ValueError("La respuesta del Pokémon debe ser un objeto JSON.")
     nombre = datos.get("name", "pokemon")
+    if not isinstance(nombre, str) or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", nombre):
+        raise ValueError("El nombre recibido no es válido para guardar el Pokémon.")
+
+    # La API proporciona un nombre, no una ruta elegida para nuestro equipo.
+    CARPETA_POKEDEX.mkdir(exist_ok=True)
     ruta = CARPETA_POKEDEX / f"{nombre}.json"
+    if ruta.resolve().parent != CARPETA_POKEDEX.resolve():
+        raise ValueError("El archivo del Pokémon debe permanecer dentro de pokedex.")
 
     # Se guarda la respuesta completa de la API y también el enlace frontal
     # de forma explícita para cumplir con el requisito del proyecto.
