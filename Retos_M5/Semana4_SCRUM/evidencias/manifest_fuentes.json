@@ -1,6 +1,6 @@
 {
-  "python": "3.13.5",
-  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "python": "3.11.16",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
   "files": {
     ".gitignore": "12dc0d17ff287ed30e68c77d040ec1a3359b70a6eb9de48ddeec93fc615a9152",
     "ENTREGA_COMMUNITY.txt": "da20779cb09ebcc11344d734326e4b26cf22735d0f6b214d03c8abc578b3d625",
@@ -14,10 +14,11 @@
     "app/style.css": "e3ef5cb928e509300a4757143484578e4aef4a204724a8238fbc5b43ec87be51",
     "tests/test_increment.py": "c414ba25ab0dbafe3cb85c29e881c41c7a5d6a117e94008b6f0b93900867fffe",
     "tools/build_documents.py": "33f4e80de3ba893671a5cc8d20bd5dd30677c4739209c8fdbacc893ebbab97f4",
+    "tools/fix_template_headers.py": "5c07d5cac40780760bf26bdf06e9aee2c6fea38f5b5bd972e231d63a35c99d24",
     "tools/integrate_repository.py": "2de231bd45b7c04256c0d28f7a5cbfacb8d1f37150648c0e925a1c8fbee30b22",
     "tools/report_data.json": "31cf845dc2cf74f1c2c87a78c62bce6798eb11bee4ec4d5c7257c7657fed6e22",
-    "tools/templates/Semana2_completada.docx": "f0f5912eb5ff5a05c29a779a5f0e275f5b6e74f6ff84e44fbb455df22138bd17",
-    "tools/templates/Semana4_base.docx": "0d4192e797cea6a70d4529d0641006226d717e0406cb79feee34edb41415a0b7",
+    "tools/templates/Semana2_completada.docx": "7abbf35a7e33930e37e42e9352e1f7e657ddca16fa39825bff8a542016676a26",
+    "tools/templates/Semana4_base.docx": "762da08540919c3cb790960dee0128f0f53159c4a62a3df91a3b3f345f254abb",
     "tools/verify_browser.py": "66451a3632ca8bc974517a25de88b134649747a595846f5bfa5e9074b47f0cc4"
   }
 }
