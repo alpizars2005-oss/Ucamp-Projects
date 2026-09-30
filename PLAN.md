@@ -271,3 +271,13 @@ Cerrar la entrega de **User Story Mapping y MVP** con una evidencia visual lista
 ## Riesgo y rollback
 
 Riesgo mínimo. Los cambios son documentales y visuales. La rama puede descartarse completa o cada commit puede revertirse de forma independiente sin afectar los ejercicios de programación.
+
+---
+
+## Semana 4 — Simulación de Sprint e Incremento
+
+Fecha: 2026-09-30. Continuar Mochi Monchi y US-01–US-10 sin alterar ejercicios previos. Separar responsabilidades simuladas y evidencia técnica. Implementar un servidor local de biblioteca estándar, interfaz de navegador y SQLite; verificar transacciones, validación, persistencia, idempotencia y concurrencia. Completar la plantilla oficial de Semana 4, recuperar Semana 2 y consolidar PDF, código y capturas.
+
+Validación: suite de 44 casos, comprobación visual de nueve escenarios, compilación y revisión de documentos. Los timeboxes y jornadas son virtuales; todos los datos de negocio son sintéticos. No se incorpora nube, cobros o funcionalidades de Release 2.
+
+Publicación: cambios limitados a Semana4_SCRUM, este registro, índices y un workflow específico de comprobación/documentación. El workflow sólo publica resultados tras pasar pruebas; no utiliza force push ni cambia ejercicios históricos. Revertir los commits de esta entrega permite retirar el incremento sin tocar semanas anteriores.

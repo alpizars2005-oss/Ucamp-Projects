@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mochi Monchi: demostración académica de pedidos e inventario.">
+  <title>Mochi Monchi · Pedidos e inventario</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="topbar">
+    <div class="brand"><span class="seal" aria-hidden="true">mm</span><div><strong>Mochi Monchi</strong><small>PEDIDOS &amp; INVENTARIO</small></div></div>
+    <span class="demo-label">ENTORNO DE DEMOSTRACIÓN</span>
+  </header>
+  <div class="workspace">
+    <aside class="sidebar">
+      <p class="eyebrow">OPERACIÓN</p>
+      <nav aria-label="Secciones">
+        <button type="button" class="nav active" data-view="orders-view" aria-current="page"><span>01</span> Pedidos</button>
+        <button type="button" class="nav" data-view="stock-view"><span>02</span> Inventario</button>
+        <button type="button" class="nav" data-view="close-view"><span>03</span> Cierre del día</button>
+      </nav>
+      <div class="sidebar-note"><strong>Una venta, un registro.</strong><p>Al confirmar, cada receta actualiza sus ingredientes y empaques.</p></div>
+      <p class="build-note">UCAMP · SPRINT 01<br>Incremento académico</p>
+    </aside>
+    <main id="main">
+      <div class="page-meta"><span id="business-date">Cargando turno…</span><span id="connection" role="status">Conectando</span></div>
+      <div id="notice" role="status" aria-live="polite" hidden></div>
+      <section id="orders-view" class="view" aria-labelledby="orders-title">
+        <div class="page-heading"><div><p class="eyebrow">MOSTRADOR</p><h1 id="orders-title">Un pedido a la vez.</h1><p>Revisa, confirma y deja que la receta haga el resto.</p></div><span class="tag">Precios en MXN</span></div>
+        <div class="order-layout">
+          <div><div class="section-title"><h2>Catálogo del turno</h2><span>3 recetas de ejemplo</span></div><div id="catalog" class="catalog"></div>
+            <div class="quiet-note">Los precios, recetas y existencias son ficticios. No se procesan pagos ni se emiten comprobantes fiscales.</div>
+          </div>
+          <section class="receipt" aria-labelledby="receipt-title">
+            <div class="receipt-head"><p class="eyebrow">REVISIÓN ANTES DE CONFIRMAR</p><h2 id="receipt-title">Pedido actual</h2></div>
+            <div id="cart"><p class="empty">Agrega un producto del catálogo.</p></div>
+            <label for="note">Nota de preparación <span>(opcional)</span></label>
+            <textarea id="note" maxlength="240" rows="2" placeholder="Ej. entregar juntos"></textarea>
+            <p class="field-hint">Una nota no modifica la receta ni sus ingredientes.</p>
+            <div class="total"><span>Total</span><strong id="total">$0.00</strong></div>
+            <button type="button" id="confirm" class="primary" disabled>Confirmar pedido</button>
+            <p class="receipt-foot">El inventario se descuenta únicamente al confirmar.</p>
+          </section>
+        </div>
+      </section>
+      <section id="stock-view" class="view" hidden aria-labelledby="stock-title">
+        <div class="page-heading"><div><p class="eyebrow">COCINA &amp; ALMACÉN</p><h1 id="stock-title">Lo que queda, a la vista.</h1><p>Existencias compartidas por todos los navegadores conectados.</p></div><span class="tag">Actualización cada 5 s</span></div>
+        <div class="panel table-wrap"><table><caption>Ingredientes y empaques</caption><thead><tr><th scope="col">Insumo</th><th scope="col">Disponible</th><th scope="col">Umbral de alerta</th><th scope="col">Estado</th></tr></thead><tbody id="stock"></tbody></table></div>
+        <p class="quiet-note">La disponibilidad del catálogo depende de la receta completa. Dos productos pueden necesitar el mismo insumo; el servidor vuelve a validar todo el pedido antes de guardarlo.</p>
+      </section>
+      <section id="close-view" class="view" hidden aria-labelledby="close-title">
+        <div class="page-heading"><div><p class="eyebrow">CIERRE &amp; APRENDIZAJE</p><h1 id="close-title">Así va el día.</h1><p>Pedidos confirmados y una oportunidad para mejorar el siguiente turno.</p></div></div>
+        <div class="summary"><div><span>Pedidos confirmados</span><strong id="order-count">0</strong></div><div><span>Total registrado · MXN</span><strong id="sales">$0.00</strong></div><div><span>Valoraciones registradas</span><strong id="feedback-count">0</strong></div></div>
+        <div class="close-layout"><div class="panel"><div class="section-title"><h2>Últimos pedidos</h2><span>Hasta 30 del día</span></div><div id="history"></div></div>
+          <form id="feedback-form" class="panel"><p class="eyebrow">RETROALIMENTACIÓN</p><h2>¿Cómo fue el registro?</h2><p>1 = difícil · 5 = sencillo</p><label for="rating">Valoración</label><select id="rating" required><option value="">Elige de 1 a 5</option><option value="1">1 · Difícil</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 · Sencillo</option></select><label for="comment">¿Qué mejorarías? <span>(opcional)</span></label><textarea id="comment" rows="3" maxlength="500" placeholder="Una observación concreta del flujo"></textarea><button type="submit" id="save-feedback" class="primary">Guardar valoración</button><p class="field-hint">En la entrega, las valoraciones de prueba no representan opiniones de clientes.</p></form>
+        </div>
+      </section>
+      <footer>Datos de ejemplo · Sin pagos reales · Una base local compartida, no sincronización en la nube.</footer>
+    </main>
+  </div>
+</body>
+</html>

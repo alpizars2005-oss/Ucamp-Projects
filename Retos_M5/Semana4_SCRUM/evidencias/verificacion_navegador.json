@@ -1,0 +1,379 @@
+{
+  "executed_at_utc": "2026-09-30T12:46:28.113357+00:00",
+  "environment": "Chromium headless; dos contextos de navegador, no dos teléfonos físicos",
+  "data": "Precios, recetas, pedidos y valoraciones sintéticos",
+  "checks": [
+    "Catálogo visible con tres productos y precios",
+    "Revisión de 2 fresa + 1 matcha = $110.00 MXN",
+    "Confirmación persistida y descuento exacto de ingredientes y empaques",
+    "Tres alertas de stock bajo tras el segundo pedido, sin existencias negativas",
+    "Segundo navegador comparte el inventario; interfaz de 390 px sin desbordamiento horizontal",
+    "Valoración 4/5 y comentario guardados; segundo navegador se actualiza por consulta periódica",
+    "Pedido sin stock rechazado desde la interfaz; no cambia ni pedidos ni inventario",
+    "Respuesta perdida + recarga + reintento: una sola venta y un solo descuento",
+    "Nota con HTML se muestra como texto, no como contenido ejecutable"
+  ],
+  "first_sale": {
+    "business_date": "2026-09-30",
+    "products": [
+      {
+        "id": 1,
+        "name": "Mochi de fresa",
+        "price_cents": 3500,
+        "available": 11,
+        "recipe": [
+          {
+            "name": "Masa de arroz",
+            "unit": "g",
+            "stock": 480,
+            "amount": 40
+          },
+          {
+            "name": "Crema",
+            "unit": "g",
+            "stock": 240,
+            "amount": 20
+          },
+          {
+            "name": "Fresa",
+            "unit": "g",
+            "stock": 170,
+            "amount": 15
+          },
+          {
+            "name": "Empaque individual",
+            "unit": "pza",
+            "stock": 17,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Mochi de mango",
+        "price_cents": 3500,
+        "available": 12,
+        "recipe": [
+          {
+            "name": "Masa de arroz",
+            "unit": "g",
+            "stock": 480,
+            "amount": 40
+          },
+          {
+            "name": "Crema",
+            "unit": "g",
+            "stock": 240,
+            "amount": 20
+          },
+          {
+            "name": "Mango",
+            "unit": "g",
+            "stock": 200,
+            "amount": 15
+          },
+          {
+            "name": "Empaque individual",
+            "unit": "pza",
+            "stock": 17,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Mochi de matcha",
+        "price_cents": 4000,
+        "available": 4,
+        "recipe": [
+          {
+            "name": "Masa de arroz",
+            "unit": "g",
+            "stock": 480,
+            "amount": 40
+          },
+          {
+            "name": "Crema",
+            "unit": "g",
+            "stock": 240,
+            "amount": 20
+          },
+          {
+            "name": "Matcha",
+            "unit": "g",
+            "stock": 65,
+            "amount": 15
+          },
+          {
+            "name": "Empaque individual",
+            "unit": "pza",
+            "stock": 17,
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "stock": [
+      {
+        "id": 1,
+        "name": "Masa de arroz",
+        "unit": "g",
+        "stock": 480,
+        "low_at": 200
+      },
+      {
+        "id": 2,
+        "name": "Crema",
+        "unit": "g",
+        "stock": 240,
+        "low_at": 100
+      },
+      {
+        "id": 3,
+        "name": "Fresa",
+        "unit": "g",
+        "stock": 170,
+        "low_at": 60
+      },
+      {
+        "id": 4,
+        "name": "Mango",
+        "unit": "g",
+        "stock": 200,
+        "low_at": 60
+      },
+      {
+        "id": 5,
+        "name": "Matcha",
+        "unit": "g",
+        "stock": 65,
+        "low_at": 30
+      },
+      {
+        "id": 6,
+        "name": "Empaque individual",
+        "unit": "pza",
+        "stock": 17,
+        "low_at": 5
+      }
+    ],
+    "orders": [
+      {
+        "id": "7f138f9e-8992-4579-90f3-eca0e486f925",
+        "created_at": "2026-09-30T12:46:50+00:00",
+        "note": "Pedido de prueba · entregar juntos",
+        "total_cents": 11000,
+        "lines": [
+          {
+            "name": "Mochi de fresa",
+            "quantity": 2,
+            "unit_price_cents": 3500
+          },
+          {
+            "name": "Mochi de matcha",
+            "quantity": 1,
+            "unit_price_cents": 4000
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "orders": 1,
+      "sales_cents": 11000
+    },
+    "feedback": {
+      "count": 0,
+      "average": null
+    },
+    "demo": true
+  },
+  "final_demo_state": {
+    "business_date": "2026-09-30",
+    "products": [
+      {
+        "id": 1,
+        "name": "Mochi de fresa",
+        "price_cents": 3500,
+        "available": 1,
+        "recipe": [
+          {
+            "name": "Masa de arroz",
+            "unit": "g",
+            "stock": 80,
+            "amount": 40
+          },
+          {
+            "name": "Crema",
+            "unit": "g",
+            "stock": 40,
+            "amount": 20
+          },
+          {
+            "name": "Fresa",
+            "unit": "g",
+            "stock": 20,
+            "amount": 15
+          },
+          {
+            "name": "Empaque individual",
+            "unit": "pza",
+            "stock": 7,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Mochi de mango",
+        "price_cents": 3500,
+        "available": 2,
+        "recipe": [
+          {
+            "name": "Masa de arroz",
+            "unit": "g",
+            "stock": 80,
+            "amount": 40
+          },
+          {
+            "name": "Crema",
+            "unit": "g",
+            "stock": 40,
+            "amount": 20
+          },
+          {
+            "name": "Mango",
+            "unit": "g",
+            "stock": 200,
+            "amount": 15
+          },
+          {
+            "name": "Empaque individual",
+            "unit": "pza",
+            "stock": 7,
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Mochi de matcha",
+        "price_cents": 4000,
+        "available": 2,
+        "recipe": [
+          {
+            "name": "Masa de arroz",
+            "unit": "g",
+            "stock": 80,
+            "amount": 40
+          },
+          {
+            "name": "Crema",
+            "unit": "g",
+            "stock": 40,
+            "amount": 20
+          },
+          {
+            "name": "Matcha",
+            "unit": "g",
+            "stock": 65,
+            "amount": 15
+          },
+          {
+            "name": "Empaque individual",
+            "unit": "pza",
+            "stock": 7,
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "stock": [
+      {
+        "id": 1,
+        "name": "Masa de arroz",
+        "unit": "g",
+        "stock": 80,
+        "low_at": 200
+      },
+      {
+        "id": 2,
+        "name": "Crema",
+        "unit": "g",
+        "stock": 40,
+        "low_at": 100
+      },
+      {
+        "id": 3,
+        "name": "Fresa",
+        "unit": "g",
+        "stock": 20,
+        "low_at": 60
+      },
+      {
+        "id": 4,
+        "name": "Mango",
+        "unit": "g",
+        "stock": 200,
+        "low_at": 60
+      },
+      {
+        "id": 5,
+        "name": "Matcha",
+        "unit": "g",
+        "stock": 65,
+        "low_at": 30
+      },
+      {
+        "id": 6,
+        "name": "Empaque individual",
+        "unit": "pza",
+        "stock": 7,
+        "low_at": 5
+      }
+    ],
+    "orders": [
+      {
+        "id": "d247e05b-3166-4480-8262-32f339933c20",
+        "created_at": "2026-09-30T12:46:50+00:00",
+        "note": "Segundo pedido sintético: prueba de alertas",
+        "total_cents": 35000,
+        "lines": [
+          {
+            "name": "Mochi de fresa",
+            "quantity": 10,
+            "unit_price_cents": 3500
+          }
+        ]
+      },
+      {
+        "id": "7f138f9e-8992-4579-90f3-eca0e486f925",
+        "created_at": "2026-09-30T12:46:50+00:00",
+        "note": "Pedido de prueba · entregar juntos",
+        "total_cents": 11000,
+        "lines": [
+          {
+            "name": "Mochi de fresa",
+            "quantity": 2,
+            "unit_price_cents": 3500
+          },
+          {
+            "name": "Mochi de matcha",
+            "quantity": 1,
+            "unit_price_cents": 4000
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "orders": 2,
+      "sales_cents": 46000
+    },
+    "feedback": {
+      "count": 1,
+      "average": 4.0
+    },
+    "demo": true
+  },
+  "javascript_errors": [],
+  "result": "PASS"
+}

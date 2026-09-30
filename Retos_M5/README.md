@@ -77,3 +77,11 @@ Las semanas 1, 2 y 3 son entregas documentales y no modifican código ejecutable
 - las versiones DOCX/PDF se revisan visualmente antes de entrega.
 
 Este README se actualizará conforme se publiquen los siguientes retos del módulo.
+
+## Semana 4 — Simulación de Sprint e Incremento
+
+La Semana 4 continúa las diez historias del MVP de Semana 3. Incluye Planning, cinco Daily virtuales, Review, Retrospective, DoR/DoD, aprendizajes y un incremento ejecutable local. La simulación individual se distingue de las pruebas técnicas reales y de la validación comercial pendiente.
+
+[Guía y código](Semana4_SCRUM/) · [Observaciones](Semana4_SCRUM/Observaciones_del_Sprint.md) · [Plantillas Semanas 2 y 4](Semana4_SCRUM/documentos/) · [Capturas y resultados](Semana4_SCRUM/evidencias/)
+
+A diferencia de las semanas documentales anteriores, esta entrega incorpora código ejecutable: 44 pruebas de lógica/API y nueve comprobaciones visuales reproducibles. El registro de navegador identifica el modo de ejecución exacto; no acredita dispositivos físicos ni uso productivo.

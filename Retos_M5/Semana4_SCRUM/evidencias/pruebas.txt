@@ -1,0 +1,49 @@
+test_authorized_state_is_json (test_increment.HttpTests.test_authorized_state_is_json) ... ok
+test_bad_json_is_rejected (test_increment.HttpTests.test_bad_json_is_rejected) ... ok
+test_bad_utf8_is_rejected (test_increment.HttpTests.test_bad_utf8_is_rejected) ... ok
+test_body_size_limit (test_increment.HttpTests.test_body_size_limit) ... ok
+test_order_http_status_and_retry (test_increment.HttpTests.test_order_http_status_and_retry) ... ok
+test_state_requires_access_key (test_increment.HttpTests.test_state_requires_access_key) ... ok
+test_static_allowlist_blocks_database_and_traversal (test_increment.HttpTests.test_static_allowlist_blocks_database_and_traversal) ... ok
+test_static_html_has_security_headers (test_increment.HttpTests.test_static_html_has_security_headers) ... ok
+test_unknown_endpoint_is_rejected (test_increment.HttpTests.test_unknown_endpoint_is_rejected) ... ok
+test_wrong_access_key_is_rejected (test_increment.HttpTests.test_wrong_access_key_is_rejected) ... ok
+test_wrong_content_type_is_rejected (test_increment.HttpTests.test_wrong_content_type_is_rejected) ... ok
+test_availability_uses_complete_recipe (test_increment.StoreTests.test_availability_uses_complete_recipe) ... ok
+test_boolean_product_is_rejected (test_increment.StoreTests.test_boolean_product_is_rejected) ... ok
+test_boolean_quantity_is_rejected (test_increment.StoreTests.test_boolean_quantity_is_rejected) ... ok
+test_catalog_and_prices (test_increment.StoreTests.test_catalog_and_prices) ... ok
+test_concurrent_identical_requests_create_one_order (test_increment.StoreTests.test_concurrent_identical_requests_create_one_order) ... ok
+test_concurrent_sales_cannot_oversell (test_increment.StoreTests.test_concurrent_sales_cannot_oversell) ... ok
+test_daily_summary_excludes_other_dates (test_increment.StoreTests.test_daily_summary_excludes_other_dates) ... ok
+test_database_survives_restart_without_reseeding (test_increment.StoreTests.test_database_survives_restart_without_reseeding) ... ok
+test_duplicate_lines_are_aggregated (test_increment.StoreTests.test_duplicate_lines_are_aggregated) ... ok
+test_empty_order_is_rejected (test_increment.StoreTests.test_empty_order_is_rejected) ... ok
+test_feedback_bounds (test_increment.StoreTests.test_feedback_bounds) ... ok
+test_feedback_conflicting_retry_is_rejected (test_increment.StoreTests.test_feedback_conflicting_retry_is_rejected) ... ok
+test_feedback_persists_rating_and_comment (test_increment.StoreTests.test_feedback_persists_rating_and_comment) ... ok
+test_feedback_retry_is_idempotent (test_increment.StoreTests.test_feedback_retry_is_idempotent) ... ok
+test_fractional_quantity_is_rejected (test_increment.StoreTests.test_fractional_quantity_is_rejected) ... ok
+test_invalid_request_id_is_rejected (test_increment.StoreTests.test_invalid_request_id_is_rejected) ... ok
+test_long_note_is_rejected (test_increment.StoreTests.test_long_note_is_rejected) ... ok
+test_low_stock_threshold_is_available_to_interface (test_increment.StoreTests.test_low_stock_threshold_is_available_to_interface) ... ok
+test_malformed_line_is_rejected (test_increment.StoreTests.test_malformed_line_is_rejected) ... ok
+test_missing_recipe_blocks_sale (test_increment.StoreTests.test_missing_recipe_blocks_sale) ... ok
+test_negative_quantity_is_rejected (test_increment.StoreTests.test_negative_quantity_is_rejected) ... ok
+test_non_object_payload_is_rejected (test_increment.StoreTests.test_non_object_payload_is_rejected) ... ok
+test_note_and_lines_are_persisted (test_increment.StoreTests.test_note_and_lines_are_persisted) ... ok
+test_quantity_limit_after_aggregation (test_increment.StoreTests.test_quantity_limit_after_aggregation) ... ok
+test_retry_does_not_duplicate_or_deduct_twice (test_increment.StoreTests.test_retry_does_not_duplicate_or_deduct_twice) ... ok
+test_reusing_id_with_other_order_is_rejected (test_increment.StoreTests.test_reusing_id_with_other_order_is_rejected) ... ok
+test_sale_deducts_ingredients_and_packaging (test_increment.StoreTests.test_sale_deducts_ingredients_and_packaging) ... ok
+test_server_calculates_total_not_client (test_increment.StoreTests.test_server_calculates_total_not_client) ... ok
+test_shared_ingredient_shortage_is_aggregated (test_increment.StoreTests.test_shared_ingredient_shortage_is_aggregated) ... ok
+test_stock_shortage_rolls_back_whole_order (test_increment.StoreTests.test_stock_shortage_rolls_back_whole_order) ... ok
+test_unknown_product_is_rejected (test_increment.StoreTests.test_unknown_product_is_rejected) ... ok
+test_unknown_schema_version_is_not_overwritten (test_increment.StoreTests.test_unknown_schema_version_is_not_overwritten) ... ok
+test_zero_quantity_is_rejected (test_increment.StoreTests.test_zero_quantity_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 0.846s
+
+OK

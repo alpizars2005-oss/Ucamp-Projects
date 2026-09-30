@@ -1,0 +1,23 @@
+{
+  "python": "3.11.16",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "files": {
+    ".gitignore": "12dc0d17ff287ed30e68c77d040ec1a3359b70a6eb9de48ddeec93fc615a9152",
+    "ENTREGA_COMMUNITY.txt": "da20779cb09ebcc11344d734326e4b26cf22735d0f6b214d03c8abc578b3d625",
+    "Iniciar_Mochi_Monchi.bat": "e63cf0860097d71b4e1e43b8c9c477f98bd80ab7f4d41f4247ccbaf2af2d9ec3",
+    "Observaciones_del_Sprint.md": "a6bda2cac0c4df1147333584c6cc2fa4fb2bd6aa0f6d6832dd1c3940ddb703bc",
+    "PLAN.md": "4da590d75f7ae1e17daf054d5915a7c315881220b364c63e5103a448ca584b5f",
+    "README.md": "cd7d5f095b3a2d147c2dc7183e21d0b5d189deccb4904aa67bc891ac76631160",
+    "app/app.js": "37485ccc2b1162da8156efe3090391fc0dcdc2e982404f8ac5b41c1fe7a36723",
+    "app/index.html": "fdd3f8070551a89ccec5d9c53b4c30e39b041b280a0e59b6ce3ed1c4ee334703",
+    "app/server.py": "9d9d7e341f0cc9b3eca160abcdb73d4022dc0b1c33d44e56c935ea3d59d2769e",
+    "app/style.css": "e3ef5cb928e509300a4757143484578e4aef4a204724a8238fbc5b43ec87be51",
+    "tests/test_increment.py": "c414ba25ab0dbafe3cb85c29e881c41c7a5d6a117e94008b6f0b93900867fffe",
+    "tools/build_documents.py": "33f4e80de3ba893671a5cc8d20bd5dd30677c4739209c8fdbacc893ebbab97f4",
+    "tools/integrate_repository.py": "1ea16d7931d422deeb21a728287af534a52bef51238fa43dc95323b21da24c8d",
+    "tools/report_data.json": "31cf845dc2cf74f1c2c87a78c62bce6798eb11bee4ec4d5c7257c7657fed6e22",
+    "tools/templates/Semana2_completada.docx": "f0f5912eb5ff5a05c29a779a5f0e275f5b6e74f6ff84e44fbb455df22138bd17",
+    "tools/templates/Semana4_base.docx": "0d4192e797cea6a70d4529d0641006226d717e0406cb79feee34edb41415a0b7",
+    "tools/verify_browser.py": "66451a3632ca8bc974517a25de88b134649747a595846f5bfa5e9074b47f0cc4"
+  }
+}

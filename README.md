@@ -334,3 +334,9 @@ Continuaré actualizando este repositorio conforme complete nuevos retos y proye
 
 **Angel Alfredo Alpizar Sanchez**  
 Estudiante de Ingeniería en Sistemas Computacionales y alumno de UCAMP.
+
+## Semana 4 — Simulación de Sprint e Incremento
+
+Mochi Monchi incorpora un incremento local de pedidos e inventario, con simulación Scrum, pruebas y ambas plantillas de entrega.
+
+[Proyecto y ejecución](Retos_M5/Semana4_SCRUM/) · [Observaciones](Retos_M5/Semana4_SCRUM/Observaciones_del_Sprint.md) · [Documentos finales](Retos_M5/Semana4_SCRUM/documentos/)

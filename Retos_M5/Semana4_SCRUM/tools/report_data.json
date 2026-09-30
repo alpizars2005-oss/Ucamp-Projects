@@ -1,0 +1,175 @@
+{
+  "project": "Mochi Monchi",
+  "author": "Angel Alfredo",
+  "date": "30 de septiembre de 2026",
+  "stories": [
+    [
+      "US-01",
+      "Abrir catálogo y precios",
+      "Se muestran fresa y mango a $35.00 y matcha a $40.00; importes sintéticos en MXN.",
+      "Catálogo; 01_pedido_revision.png"
+    ],
+    [
+      "US-02",
+      "Consultar stock inicial",
+      "Cada ingrediente muestra cantidad, unidad y umbral; la disponibilidad usa la receta completa.",
+      "Inventario; tests de disponibilidad"
+    ],
+    [
+      "US-03",
+      "Crear un pedido",
+      "Admite varios productos y cantidades enteras de 1 a 99; rechaza entradas inválidas.",
+      "Carrito; validación de líneas"
+    ],
+    [
+      "US-04",
+      "Añadir una nota breve",
+      "Guarda hasta 240 caracteres como texto; no modifica la receta ni admite sustituciones automáticas.",
+      "Pedido confirmado; prueba de HTML"
+    ],
+    [
+      "US-05",
+      "Revisar el total",
+      "El carrito muestra $110.00 para 2 fresa y 1 matcha; el servidor recalcula antes de guardar.",
+      "01_pedido_revision.png"
+    ],
+    [
+      "US-06",
+      "Confirmar y guardar",
+      "La venta permanece tras reabrir la base; repetir el mismo envío no duplica pedidos.",
+      "Persistencia e idempotencia"
+    ],
+    [
+      "US-07",
+      "Descontar la receta",
+      "Una transacción descuenta ingredientes y empaques; si falta un insumo no guarda ni descuenta nada.",
+      "Atomicidad y concurrencia"
+    ],
+    [
+      "US-08",
+      "Actualizar existencias y alertas",
+      "Tras la segunda venta quedan 80 g de masa, 40 g de crema y 20 g de fresa; aparecen tres alertas.",
+      "03_inventario_alertas.png"
+    ],
+    [
+      "US-09",
+      "Consultar el resumen diario",
+      "El cierre muestra 2 pedidos y $460.00 de ventas de prueba, filtrados por fecha local del servidor.",
+      "04_cierre_y_feedback.png"
+    ],
+    [
+      "US-10",
+      "Registrar feedback del turno",
+      "Persiste una valoración entera de 1 a 5 y comentario opcional; el dato 4/5 de la demo no es opinión de un cliente.",
+      "04_cierre_y_feedback.png"
+    ]
+  ],
+  "dor": [
+    "La historia conserva su identificador del MVP y explica usuario, necesidad y valor esperado.",
+    "Existe un criterio observable de aceptación y al menos un caso de error relevante.",
+    "Los productos, precios, unidades, recetas y umbrales necesarios están definidos como datos de prueba.",
+    "Las dependencias entre pedido, receta e inventario son conocidas; las líneas compartidas se acumulan antes de descontar.",
+    "El alcance está acotado: aplicación local; sin cobros reales, nube, usuarios avanzados ni cambio de receta por una nota.",
+    "La historia cabe en la capacidad de la simulación y tiene una forma concreta de comprobar su resultado."
+  ],
+  "dod": [
+    "El flujo de la historia funciona en el incremento local y cumple el criterio de aceptación acordado.",
+    "Pedido e inventario se actualizan juntos; los errores no dejan ventas parciales ni cantidades negativas.",
+    "Los datos persisten y los reintentos de un mismo envío no duplican la operación.",
+    "Pasan las 44 pruebas de lógica/API y las nueve comprobaciones de interfaz documentadas, con sus límites de entorno visibles.",
+    "El código, comandos de ejecución, limitaciones, capturas y resultados se entregan de forma reproducible; no contiene credenciales reales.",
+    "La historia se revisa contra el objetivo del Sprint y se incorpora a la documentación; la Review no sustituye estas verificaciones."
+  ],
+  "dailies": [
+    [
+      "J1",
+      "Inspección del alcance",
+      "La visión incluía un sistema amplio, pero el MVP ya tenía diez historias delimitadas.",
+      "Usar tres productos y recetas sintéticas; trabajar el recorrido completo antes de añadir funciones de Release 2.",
+      "No hay cifras reales de costos, recetas o tiempo de operación. Se mantienen como hipótesis no verificadas."
+    ],
+    [
+      "J2",
+      "Pedido y preparación",
+      "Una nota puede interpretarse como un cambio de ingredientes, aunque la receta del sistema es fija.",
+      "Aclarar en la interfaz que la nota es informativa; validar cantidades y recalcular el total en el servidor.",
+      "Las sustituciones quedan fuera del incremento. No se promete descontar una receta que el sistema no conoce."
+    ],
+    [
+      "J3",
+      "Integridad del inventario",
+      "Varias líneas pueden consumir el mismo ingrediente; además, un usuario puede repetir una confirmación.",
+      "Agrupar requerimientos y ejecutar una transacción; usar un identificador por envío y añadir pruebas de concurrencia.",
+      "La operación no debe quedar a medias cuando falta un ingrediente o se pierde la respuesta."
+    ],
+    [
+      "J4",
+      "Interfaz y revisión técnica",
+      "Dos pantallas necesitan leer una sola base; dos copias independientes no se sincronizan.",
+      "Conservar un servidor local con SQLite y clientes de navegador; consultar cambios cada cinco segundos.",
+      "La prueba local del navegador usa un puente HTTP por restricciones de navegación del entorno. No demuestra una red física."
+    ],
+    [
+      "J5",
+      "Cierre y evidencia",
+      "El flujo ya permite registrar, descontar y revisar. Faltaba separar resultados técnicos de validación comercial.",
+      "Comprobar DoD, conservar logs y seis capturas; documentar el feedback 4/5 como sintético.",
+      "Pendiente una sesión con un operador real y la revisión personal de las reflexiones antes de Community."
+    ]
+  ],
+  "retro": [
+    [
+      "Empezar",
+      "Prueba con un operador real sobre cinco pedidos de prueba.",
+      "PO / Angel Alfredo",
+      "Próximo Sprint: registrar tiempo, correcciones y comentario; comparar con una línea base manual, sin fijar mejoras inventadas."
+    ],
+    [
+      "Empezar",
+      "Diseñar cancelación con devolución exacta de inventario.",
+      "Developer / Angel Alfredo",
+      "Próximo Sprint: criterios y pruebas de doble cancelación, stock restituido y total del día corregido."
+    ],
+    [
+      "Dejar",
+      "Confundir una nota de preparación con una modificación de receta.",
+      "PO / Angel Alfredo",
+      "Mantener la advertencia visible y no aceptar sustituciones hasta definir su impacto en ingredientes."
+    ],
+    [
+      "Continuar",
+      "Probar errores antes de considerar una historia terminada.",
+      "SM y Developer / Angel Alfredo",
+      "Mantener idempotencia, atomicidad y concurrencia en la suite; ninguna regresión aceptada."
+    ],
+    [
+      "Empezar",
+      "Planear respaldo/restauración y permisos antes del uso operativo.",
+      "Developer / Angel Alfredo",
+      "Definir prueba de restauración y modelo de acceso antes de datos reales o exposición fuera de una red confiable."
+    ]
+  ],
+  "lessons": [
+    [
+      "¿Cómo te fue?",
+      "La simulación permitió pasar de una visión y un mapa de historias a un recorrido que puede comprobarse. El trabajo más importante no fue añadir pantallas, sino mantener consistente el pedido con sus ingredientes cuando ocurre un error."
+    ],
+    [
+      "¿Qué aprendiste?",
+      "Un incremento no se demuestra con una lista de funciones. Necesita criterios observables: cuánto debe descontarse, qué debe permanecer igual al rechazar una venta y qué ocurre al reenviar una confirmación."
+    ],
+    [
+      "¿Qué rescatas de este ejercicio?",
+      "Separar las responsabilidades ayudó a decidir con más claridad. La perspectiva de PO cuidó el valor; la de SM hizo visibles los impedimentos; la de desarrollo se concentró en una solución comprobable."
+    ],
+    [
+      "¿Cómo te sentiste realizando este ejercicio?",
+      "La parte que generó más incertidumbre fue el manejo de errores, porque una pantalla correcta puede ocultar un inventario inconsistente. Comprobar el rechazo sin cambios y el reintento sin duplicados dio una base más concreta para confiar en el resultado. Esta reflexión personal se propone para revisión del estudiante."
+    ],
+    [
+      "¿Cuál es ahora tu opinión de Scrum?",
+      "Scrum tiene sentido cuando inspeccionar un resultado cambia lo que se hará después. La simulación individual ayuda a comprender esa lógica, pero no reemplaza la colaboración ni la retroalimentación de un equipo y usuarios reales."
+    ]
+  ],
+  "repo_url": "https://github.com/alpizars2005-oss/Ucamp-Projects/tree/main/Retos_M5/Semana4_SCRUM"
+}

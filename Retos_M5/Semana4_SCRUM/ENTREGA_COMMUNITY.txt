@@ -1,0 +1,17 @@
+Hola, comparto mi entrega de Simulación de Sprint e Incremento, correspondiente al proyecto Mochi Monchi.
+
+Continué el Product Vision Board y el MVP de las semanas anteriores. El incremento permite registrar pedidos, calcular el total, descontar ingredientes y empaques, consultar existencias y revisar el cierre del día con feedback.
+
+La entrega incluye las plantillas de Semana 2 y Semana 4, el PDF consolidado, la simulación individual de Planning, Daily, Review y Retrospective, los acuerdos DoR/DoD y las evidencias de funcionamiento. Las jornadas Scrum son virtuales y todos los datos de la demostración son sintéticos.
+
+Repositorio y guía de ejecución:
+https://github.com/alpizars2005-oss/Ucamp-Projects/tree/main/Retos_M5/Semana4_SCRUM
+
+Documentos finales:
+https://github.com/alpizars2005-oss/Ucamp-Projects/tree/main/Retos_M5/Semana4_SCRUM/documentos
+
+Observaciones, criterios de aceptación y reflexiones:
+https://github.com/alpizars2005-oss/Ucamp-Projects/blob/main/Retos_M5/Semana4_SCRUM/Observaciones_del_Sprint.md
+
+Saludos,
+Angel Alfredo
