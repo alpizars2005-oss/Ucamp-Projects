@@ -1,71 +1,68 @@
-name: Build and publish UCAMP Sprint 1
+name: Mochi Monchi increment checks
 
 on:
   push:
     branches: [main]
     paths:
-      - '.github/ucamp-s4-publication.part*'
-      - '.github/ucamp_s4_unpack.py'
+      - 'Retos_M5/Semana4_SCRUM/**'
+      - '.github/workflows/scrum-increment.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'Retos_M5/Semana4_SCRUM/**'
       - '.github/workflows/scrum-increment.yml'
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: ucamp-sprint-publication
-  cancel-in-progress: false
+  group: mochi-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  SPRINT: Retos_M5/Semana4_SCRUM
 
 jobs:
-  publish:
-    if: github.ref == 'refs/heads/main'
+  logic:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    env:
-      SPRINT: Retos_M5/Semana4_SCRUM
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.13']
     steps:
-      - name: Check out authorized repository
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - name: Set up Python
-        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
-          python-version: '3.11'
-      - name: Verify and unpack the prepared project
-        run: python .github/ucamp_s4_unpack.py
-      - name: Run 44 logic and HTTP checks
+          python-version: ${{ matrix.python-version }}
+      - name: Check syntax and run offline logic/API tests
         run: |
-          mkdir -p "$SPRINT/evidencias"
-          python -m unittest discover -s "$SPRINT/tests" -v 2>&1 | tee "$SPRINT/evidencias/pruebas.txt"
           python -m compileall -q "$SPRINT"
           node --check "$SPRINT/app/app.js"
-      - name: Install document and browser verification tools
+          python -m unittest discover -s "$SPRINT/tests" -v
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Install isolated browser verification tools
         run: |
-          python -m pip install 'python-docx==1.2.0' 'Pillow>=10,<13' 'pypdf==5.9.0' 'playwright==1.57.0'
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends libreoffice-writer fonts-liberation
+          python -m pip install 'playwright==1.57.0'
           python -m playwright install --with-deps chromium
-      - name: Verify native browser flow and capture evidence
-        run: python "$SPRINT/tools/verify_browser.py"
-      - name: Generate both templates and consolidated PDF
+      - name: Verify native browser behavior and refresh test evidence
         run: |
-          python "$SPRINT/tools/build_documents.py" --pdf
-          python "$SPRINT/tools/integrate_repository.py"
-      - name: Preserve generated submission artifact
+          python -m unittest discover -s "$SPRINT/tests" -v 2>&1 | tee "$SPRINT/evidencias/pruebas.txt"
+          python "$SPRINT/tools/verify_browser.py"
+      - name: Preserve evidence without modifying the repository
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: mochi-monchi-sprint1
-          path: Retos_M5/Semana4_SCRUM/
+          name: mochi-monchi-browser-evidence
+          path: |
+            Retos_M5/Semana4_SCRUM/evidencias/*.png
+            Retos_M5/Semana4_SCRUM/evidencias/pruebas.txt
+            Retos_M5/Semana4_SCRUM/evidencias/verificacion_navegador.json
           retention-days: 7
           if-no-files-found: error
-          include-hidden-files: true
-      - name: Publish only the verified project and indexes
-        run: |
-          rm .github/ucamp-s4-publication.part{0,1,2,3,4,5,6,7}
-          rm .github/ucamp_s4_unpack.py
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- "$SPRINT" README.md Retos_M5/README.md PLAN.md
-          git add -u -- .github/ucamp-s4-publication.part* .github/ucamp_s4_unpack.py
-          if ! git diff --cached --quiet; then
-            git commit -m 'feat(scrum): publish tested Mochi Monchi increment and completed templates'
-            git push origin HEAD:main
-          fi

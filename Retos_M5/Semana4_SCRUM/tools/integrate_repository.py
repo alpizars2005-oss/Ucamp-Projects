@@ -3,7 +3,6 @@ from pathlib import Path
 import hashlib
 import json
 import platform
-import zipfile
 
 B = Path(__file__).resolve().parents[1]
 R = B.parents[1]
@@ -31,6 +30,6 @@ La Semana 2 recupera la plantilla completada previamente; la Semana 4 conserva l
 ''',encoding='utf-8')
 manifest = {'python':platform.python_version(),'platform':platform.platform(),'files':{}}
 for path in sorted(B.rglob('*')):
-    if not path.is_file() or any(part in path.parts for part in ('__pycache__','data','documentos','evidencias')):continue
+    if not path.is_file() or any(part in path.relative_to(B).parts for part in ('__pycache__','data','.venv','documentos','evidencias')):continue
     manifest['files'][path.relative_to(B).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
 (B/'evidencias/manifest_fuentes.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
