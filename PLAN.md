@@ -281,3 +281,35 @@ Fecha: 2026-09-30. Continuar Mochi Monchi y US-01–US-10 sin alterar ejercicios
 Validación: suite de 44 casos, comprobación visual de nueve escenarios, compilación y revisión de documentos. Los timeboxes y jornadas son virtuales; todos los datos de negocio son sintéticos. No se incorpora nube, cobros o funcionalidades de Release 2.
 
 Publicación: cambios limitados a Semana4_SCRUM, este registro, índices y un workflow específico de comprobación/documentación. El workflow sólo publica resultados tras pasar pruebas; no utiliza force push ni cambia ejercicios históricos. Revertir los commits de esta entrega permite retirar el incremento sin tocar semanas anteriores.
+
+
+---
+
+# Aprendiendo a emprender — M1 Semana 1 — 2026-10-08
+
+## Objetivo
+Desarrollar la entrega «Fundamentación y Contexto» con un nuevo tablero Miro para Mochi Monchi, conservando la continuidad con el módulo Scrum anterior. La actividad pide introducción, problema, cliente 2.0, análisis del ecosistema, redes y Miro como herramienta de gestión.
+
+## Commits planeados
+1. **Planificar entrega de emprendimiento en tablero Miro**
+   - Registrar alcance, fuentes, criterios de evaluación, riesgos y rollback.
+2. **Documentar propuesta digital de Mochi Monchi para UCAMP**
+   - Crear carpeta independiente del módulo Scrum con introducción, problema, cliente 2.0, canales y omnicanalidad.
+   - Distinguir hipótesis del emprendimiento de funciones verificadas del prototipo académico.
+   - Incluir referencias oficiales, rúbrica y referencia al tablero Miro recién creado.
+3. **Añadir respaldo visual y guía de entrega académica**
+   - Incorporar resumen visual SVG compatible con navegadores y una guía de evidencia/capturas.
+   - Verificar contenido del tablero real sin presentar el SVG como captura de Miro.
+4. **Actualizar índice y comprobar la entrega completa**
+   - Enlazar los materiales desde README raíz.
+   - Validar estructura Markdown/SVG, enlaces, rúbrica, no exposición de secretos y que los ejercicios anteriores no cambien.
+
+## Verificación
+- Contenido fundamentado en el PDF de UCAMP del reto Semana 1 (2026).
+- Datos nacionales: ENDUTIH 2025 de INEGI (publicación de junio 2026) y análisis de omnicanalidad de AMVO (2026), sin confundir porcentajes nacionales con demanda local.
+- Confirmar en el tablero de Miro la presencia de seis secciones y fuentes; no alterar el Story Map anterior.
+- Los archivos de esta entrega son documentales, no ejecutables: no añaden dependencias ni alteran la API o las pruebas del Sprint 1.
+- Revisar manualmente ortografía, fecha, vínculos y legibilidad.
+
+## Riesgos y rollback
+Riesgo bajo; sólo cambia documentación y se añade un tablero nuevo. El tablero académico aún necesita revisión y envío del propietario a Community. Para revertir GitHub, revertir cada commit de esta entrega; no eliminar trabajos previos. El Miro original del módulo Scrum queda intacto. La plantilla del PDF no fue accesible con los permisos actuales, por lo que se crea un tablero nuevo y estructurado desde cero.
