@@ -340,3 +340,12 @@ Estudiante de Ingeniería en Sistemas Computacionales y alumno de UCAMP.
 Mochi Monchi incorpora un incremento local de pedidos e inventario, con simulación Scrum, pruebas y ambas plantillas de entrega.
 
 [Proyecto y ejecución](Retos_M5/Semana4_SCRUM/) · [Observaciones](Retos_M5/Semana4_SCRUM/Observaciones_del_Sprint.md) · [Documentos finales](Retos_M5/Semana4_SCRUM/documentos/)
+
+
+## Aprendiendo a emprender
+
+El Módulo 1 de Aprendiendo a emprender continúa el caso académico Mochi Monchi desde la fundamentación, el cliente 2.0, la omnicanalidad y las redes sociales.
+
+[Reto Semana 1](Aprendiendo_a_emprender/Modulo1/Semana1_Fundamentacion_Contexto/) · [Tablero Miro](https://miro.com/app/board/uXjVEcssfMI=/)
+
+Se distingue el prototipo local de las hipótesis comerciales aún no validadas.
